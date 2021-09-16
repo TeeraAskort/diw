@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_Boton_Depurado</title>
+
+    <script>
+      var dato = 1;
+      console.log(dato);
+
+      function sumarDos() {
+        dato += 1;
+        dato += 1;
+        console.log(dato);
+        document.getElementById("texto").innerText = "Dato = " + dato;
+      }
+
+      function inicializar() {
+        document.getElementById("btnSumar").addEventListener("click", sumarDos);
+        document.getElementById("texto").innerText = "Dato = " + dato;
+      }
+
+      document.addEventListener("DOMContentLoaded", inicializar);
+    </script>
+  </head>
+  <body>
+    <button type="button" id="btnSumar">Sumar 2</button>
+
+    <p id="texto">Dato =</p>
+  </body>
+</html>

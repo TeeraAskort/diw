@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio de tablas v2</title>
+  </head>
+  <body>
+    <h2>Tabla básica</h2>
+    <table border="1">
+      <tbody>
+        <tr title="Esto es un tooltip">
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>d1</td>
+          <td>e1</td>
+        </tr>
+        <tr>
+          <td>a2</td>
+          <td>b2</td>
+          <td>c2</td>
+          <td>d2</td>
+          <td>e2</td>
+        </tr>
+        <tr>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>d3</td>
+          <td>e3</td>
+        </tr>
+        <tr>
+          <td>a4</td>
+          <td>b4</td>
+          <td>c4</td>
+          <td>d4</td>
+          <td>e4</td>
+        </tr>
+        <tr>
+          <td>a5</td>
+          <td>b6</td>
+          <td>c5</td>
+          <td>d5</td>
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pre>
+        &lt;table  border="1" &gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td&gt;a1&lt;/td&gt;
+                &lt;td&gt;b1&lt;/td&gt;
+                &lt;td&gt;c1&lt;/td&gt;
+                &lt;td&gt;d1&lt;/td&gt;
+                &lt;td&gt;e1&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;a2&lt;/td&gt;
+                &lt;td&gt;b2&lt;/td&gt;
+                &lt;td&gt;c2&lt;/td&gt;
+                &lt;td&gt;d2&lt;/td&gt;
+                &lt;td&gt;e2&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;a3&lt;/td&gt;
+                &lt;td&gt;b3&lt;/td&gt;
+                &lt;td&gt;c3&lt;/td&gt;
+                &lt;td&gt;d3&lt;/td&gt;
+                &lt;td&gt;e3&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;a4&lt;/td&gt;
+                &lt;td&gt;b4&lt;/td&gt;
+                &lt;td&gt;c4&lt;/td&gt;
+                &lt;td&gt;d4&lt;/td&gt;
+                &lt;td&gt;e4&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;a5&lt;/td&gt;
+                &lt;td&gt;b6&lt;/td&gt;
+                &lt;td&gt;c5&lt;/td&gt;
+                &lt;td&gt;d5&lt;/td&gt;
+                &lt;td&gt;e5&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;/table&gt;   
+    </pre>
+
+    <h2>Tabla 1</h2>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td rowspan="4">a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>d1</td>
+          <td>e1</td>
+        </tr>
+        <tr>
+          <td>b2</td>
+          <td>c2</td>
+          <td>d2</td>
+          <td>e2</td>
+        </tr>
+        <tr>
+          <td>b3</td>
+          <td>c3</td>
+          <td>d3</td>
+          <td>e3</td>
+        </tr>
+        <tr>
+          <td>b4</td>
+          <td>c4</td>
+          <td>d4</td>
+          <td>e4</td>
+        </tr>
+        <tr>
+          <td>a5</td>
+          <td>b6</td>
+          <td>c5</td>
+          <td>d5</td>
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tabla 2</h2>
+
+    <table border="1">
+      <tbody>
+        <tr title="Esto es un tooltip">
+          <td colspan="5">a1</td>
+        </tr>
+        <tr>
+          <td>a2</td>
+          <td>b2</td>
+          <td>c2</td>
+          <td>d2</td>
+          <td>e2</td>
+        </tr>
+        <tr>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>d3</td>
+          <td>e3</td>
+        </tr>
+        <tr>
+          <td>a4</td>
+          <td>b4</td>
+          <td>c4</td>
+          <td>d4</td>
+          <td>e4</td>
+        </tr>
+        <tr>
+          <td>a5</td>
+          <td>b6</td>
+          <td>c5</td>
+          <td>d5</td>
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tabla 3</h2>
+
+    <table border="1">
+      <tbody>
+        <tr title="Esto es un tooltip">
+          <td rowspan="2">a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>d1</td>
+          <td>e1</td>
+        </tr>
+        <tr>
+          <td colspan="2">b2</td>
+          <td>d2</td>
+          <td>e2</td>
+        </tr>
+        <tr>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>d3</td>
+          <td>e3</td>
+        </tr>
+        <tr>
+          <td>a4</td>
+          <td>b4</td>
+          <td>c4</td>
+          <td>d4</td>
+          <td>e4</td>
+        </tr>
+        <tr>
+          <td>a5</td>
+          <td>b6</td>
+          <td>c5</td>
+          <td>d5</td>
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tabla 4</h2>
+
+    <table border="1">
+      <tbody>
+        <tr title="Esto es un tooltip">
+          <td rowspan="2">a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>d1</td>
+          <td>e1</td>
+        </tr>
+        <tr>
+          <td colspan="2">b2</td>
+          <td>d2</td>
+          <td>e2</td>
+        </tr>
+        <tr>
+          <td>a3</td>
+          <td>b3</td>
+          <td rowspan="2">c3</td>
+          <td>d3</td>
+          <td>e3</td>
+        </tr>
+        <tr>
+          <td>a4</td>
+          <td>b4</td>
+          <td>c4</td>
+          <td>e4</td>
+        </tr>
+        <tr>
+          <td>a5</td>
+          <td colspan="3">b6</td>
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tabla 5</h2>
+
+    <table border="1">
+      <tbody>
+        <tr title="Esto es un tooltip">
+          <td rowspan="2">a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td colspan="2" rowspan="2">d1</td>
+        </tr>
+        <tr>
+          <td colspan="2">b2</td>
+        </tr>
+        <tr>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td rowspan="2">d3</td>
+          <td>e3</td>
+        </tr>
+        <tr>
+          <td rowspan="2">a4</td>
+          <td>b4</td>
+          <td>c4</td>
+          <td>e4</td>
+        </tr>
+        <tr>
+          <td colspan="3">b6</td>
+
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tabla 6</h2>
+
+    <table border="1">
+      <tbody>
+        <tr title="Esto es un tooltip">
+          <td rowspan="2">a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td rowspan="2">d1</td>
+        </tr>
+        <tr>
+          <td colspan="2">b2</td>
+        </tr>
+        <tr>
+          <td colspan="3">a3</td>
+          <td rowspan="2">d3</td>
+        </tr>
+        <tr>
+          <td rowspan="2">a4</td>
+          <td>b4</td>
+          <td>c4</td>
+        </tr>
+        <tr>
+          <td colspan="2">b6</td>
+          <td>e5</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
