@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <script>
+      let comp;
+      let colorDOM;
+      let marcaDOM;
+      let modeloDOM;
+      let velocidadDOM;
+      let imagenDOM;
+      let revolucionesDOM;
+      let revolucionesMostrar;
+
+      function pintar() {
+        comp = document.getElementById("divColor");
+
+        comp.style.backgroundColor = colorDOM.value;
+      }
+
+      function cambiarPlaceholder() {
+        modeloDOM.value = "";
+        switch (marcaDOM.value) {
+          case "citroen":
+            modeloDOM.placeholder = "C3";
+            break;
+
+          case "peugeot":
+            modeloDOM.placeholder = "308";
+            break;
+
+          case "ford":
+            modeloDOM.placeholder = "Fiesta";
+            break;
+
+          case "seat":
+            modeloDOM.placeholder = "Ibiza";
+            break;
+        }
+      }
+
+      function escribirVelocidad() {
+        let velocidad = velocidadDOM.value;
+        velocidadDOM.value = velocidad + " km/h";
+      }
+
+      function mostrarImagen() {
+        let imagenMostrar = document.getElementById("imagenMostrar");
+        let path = (window.URL || window.webkitURL).createObjectURL(
+          imagenDOM.files[0]
+        );
+        imagenMostrar.src = path;
+      }
+
+      function mostrarRevoluciones() {
+        revolucionesMostrar.innerText = revolucionesDOM.value;
+      }
+
+      function inicializar() {
+        colorDOM = document.getElementById("color");
+        colorDOM.addEventListener("change", pintar);
+        marcaDOM = document.getElementById("marca");
+        marcaDOM.addEventListener("change", cambiarPlaceholder);
+        modeloDOM = document.getElementById("modelo");
+        cambiarPlaceholder();
+        velocidadDOM = document.getElementById("velocidad");
+        velocidadDOM.addEventListener("focusout", escribirVelocidad);
+        imagenDOM = document.getElementById("imagen");
+        imagenDOM.addEventListener("change", mostrarImagen);
+        revolucionesDOM = document.getElementById("revoluciones");
+        revolucionesMostrar = document.getElementById("revolucionesMostrar");
+        revolucionesDOM.addEventListener("change", mostrarRevoluciones);
+        mostrarRevoluciones();
+      }
+
+      document.addEventListener("DOMContentLoaded", inicializar);
+    </script>
+  </head>
+  <body>
+    <form>
+      <fieldset class="border-gray-500">
+        <legend>Opciones principales</legend>
+        <label for="marca">Marca</label>
+        <select name="marca" id="marca" onchange="changePlaceholder()">
+          <option value="citroen">Citroen</option>
+          <option value="peugeot">Peugeot</option>
+          <option value="ford">Ford</option>
+          <option value="seat">Seat</option></select
+        ><br />
+
+        <label for="modelo"> Modelo </label>
+        <input type="text" name="modelo" id="modelo" /><br />
+
+        <label for="pais"> País de fabricación </label>
+        <select name="pais" id="pais">
+          <optgroup label="America">
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="mexico">Mexico</option>
+          </optgroup>
+          <optgroup label="Europa">
+            <option value="alemania">Alemania</option>
+            <option value="espana">España</option>
+            <option value="italia">Italia</option>
+          </optgroup>
+          <optgroup label="Asia">
+            <option value="japon">Japón</option>
+            <option value="china">China</option>
+            <option value="corea">Corea</option>
+          </optgroup>
+        </select>
+      </fieldset>
+      <label for="cilindrada">Cilindrada</label>
+      <input type="number" name="cilindrada" id="cilindrada" max="9999" /><br />
+      <label for="revoluciones">Revoluciones</label>
+      <input
+        type="range"
+        name="revoluciones"
+        id="revoluciones"
+        min="4000"
+        max="22000"
+      />
+      <span id="revolucionesMostrar"></span>
+      <br />
+      <label for="motor">Tipo de motor</label>
+      <select name="motor" id="motor">
+        <option value="12V">12V</option>
+        <option value="10V">10V</option>
+        <option value="8V">8V</option>
+        <option value="6V">6V</option>
+        <option value="6L">6L</option>
+        <option value="4Boxer">4Boxer</option>
+        <option value="4Linea">4Linea</option></select
+      ><br />
+      <label for="imagen">Imágen</label>
+      <input type="file" name="imagen" id="imagen" /><br />
+      <label for="velocidad">Velocidad</label>
+      <input type="text" id="velocidad" /><br />
+      <label>Combustible</label>
+      <input
+        type="radio"
+        id="diesel"
+        class="form-radio"
+        name="combustible"
+        value="diesel"
+      />
+      <label for="diesel">Diesel</label>
+      <input
+        type="radio"
+        id="gasolina"
+        class="form-radio"
+        name="combustible"
+        value="gasolina"
+      />
+      <label for="gasolina">Gasolina</label>
+      <input
+        type="radio"
+        id="alcohol"
+        class="form-radio"
+        name="combustible"
+        value="alcohol"
+      />
+      <label for="alcohol">Alcohol</label>
+      <input
+        type="radio"
+        id="hidrogeno"
+        class="form-radio"
+        name="combustible"
+        value="hidrogeno"
+      />
+      <label for="hidrogeno">Hidrogeno</label><br />
+      <label>En producción</label>
+      <input type="checkbox" name="produccion" id="produccion" /><br />
+      <label for="name" class="absolute left-2 transition-all bg-white px-1"
+        >Código interno</label
+      >
+      <input type="text" pattern="[A-D]{1,1}[0-9]{1,2}" /><br />
+      <div id="divColor">
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color" /><br />
+      </div>
+
+      <input type="submit" value="Enviar" />
+    </form>
+    <img src="#" alt="#" id="imagenMostrar" width="500px" />
+  </body>
+</html>
