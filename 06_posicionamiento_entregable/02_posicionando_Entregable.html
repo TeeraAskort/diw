@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="va_ES">
+  <head>
+    <meta charset="utf-8" />
+
+    <style>
+      /**********  PON TUS ESTILOS AQUÍ ****************/
+
+      .anyadido {
+      }
+
+      .borde {
+        border: 1px solid green;
+      }
+
+      .principal {
+        border: 1px solid blue;
+        margin: 2px;
+        min-height: 2em;
+      }
+
+      .secundario {
+        border: 1px solid blue;
+        margin: 2px;
+        min-height: 0.5em;
+        width: 1em;
+      }
+    </style>
+
+    <script>
+      /* PON TUS VARIABLES JS AQUÍ */
+      let divSeleccionado = null;
+      let posXDown;
+      let padre = undefined;
+      let divs = undefined;
+
+      function dobleClic(event) {
+        /* veámos si este elemento es movible */
+        var elemento = event.target;
+
+        /* es un div ??*/
+        if (elemento.tagName != "DIV") {
+          console.log("elemento tag: " + elemento.tagName);
+          console.log("not a div");
+          return;
+        }
+        /* Es de la clase "anyadido" */
+        if (elemento.classList.contains("anyadido")) {
+          elemento.remove();
+          return;
+        }
+        /* creamos el nuevo elemento */
+        let newElement = document.createElement("div");
+        newElement.classList.add("anyadido");
+
+        /* identifiquemos y mostremos el dientificador del nuevo elemento*/
+        var identificador = "" + Math.floor(Math.random() * 1000);
+        newElement.innerHTML = "" + identificador;
+        newElement.id = "" + identificador;
+
+        /*Vamos a establecer una altura que sea proporcional al tamaño del div padre*/
+        let estilo = getComputedStyle(elemento);
+        let altura = estilo.height;
+        altura = altura.match(/\d+/);
+        altura = altura - altura / 10;
+
+        /*establezcamos el mismo borde que el padre */
+        newElement.style.border = elemento.style.border;
+
+        console.log(elemento.style.border);
+        /* no digo lo que hace falta hacer para que cueste más */
+
+        /*establezcamos las dimensiones dle nuevo elemento */
+        newElement.style.height = "" + altura + "px";
+        newElement.style.width = "30px";
+
+        /*añadamos el elemento finalmente dnetro del div en el que se ha hecho doble clic*/
+        elemento.appendChild(newElement);
+      }
+
+      function up(event) {
+        if (divSeleccionado == null) {
+          console.log("div no seleccionado");
+          return;
+        }
+        divSeleccionado.parentElement.style.position = "relative";
+
+        let nuevoPadre = getParentElement(event);
+
+        /*********** veámos si el elemento va a un nuevo padre ******/
+
+        if (
+          nuevoPadre != undefined &&
+          padre != nuevoPadre &&
+          nuevoPadre.tagName == "DIV"
+        ) {
+          if (nuevoPadre != divSeleccionado) {
+            nuevoPadre.appendChild(divSeleccionado);
+            divSeleccionado.style.border =
+              nuevoPadre.style.border !== ""
+                ? nuevoPadre.style.border
+                : divSeleccionado.style.border;
+            divSeleccionado.style.top = "";
+            divSeleccionado.style.left = "";
+          }
+          return;
+        }
+
+        /*** posicionemos al elemento donde le corresponde dentro de su padre********/
+
+        console.log("reposicionando " + divSeleccionado.id);
+        var infoPos = divSeleccionado.getBoundingClientRect();
+        let infoPadre = padre.getBoundingClientRect();
+        var xpos = event.clientX - infoPadre.left;
+        var ypos = event.clientY - infoPadre.top;
+
+        console.log(infoPadre.top + " " + infoPadre.left);
+
+        console.log(
+          "reposicionando " +
+            divSeleccionado.id +
+            " en " +
+            event.clientX +
+            " , " +
+            event.clientY +
+            " , " +
+            xpos +
+            " , " +
+            ypos
+        );
+
+        divSeleccionado.style.position = "absolute";
+        divSeleccionado.style.left = xpos + "px";
+        divSeleccionado.style.top = ypos + "px";
+      }
+      function down(event) {
+        var elemento = event.target;
+        if (!elemento.classList.contains("anyadido")) {
+          divSeleccionado = null;
+          return;
+        }
+
+        // padre = elemento.parentElement;
+        padre = getParentElement(event);
+
+        divSeleccionado = elemento;
+        event.stopPropagation();
+      }
+
+      function getParentElement(event) {
+        let parent = undefined;
+        let x = event.clientX;
+        let y = event.clientY;
+
+        divs.forEach((e) => {
+          let insideX = e.offsetLeft + e.offsetWidth - x;
+          let insideY = e.offsetTop + e.offsetHeight - y;
+          if (
+            insideY > 0 &&
+            insideY < e.offsetHeight &&
+            insideX > 0 &&
+            insideX < e.offsetWidth
+          ) {
+            parent = e;
+            return;
+          }
+        });
+        return parent;
+      }
+
+      /************ FUNCIÓN INICIALIZAR *******************/
+      function inicializar() {
+        document.addEventListener("dblclick", dobleClic);
+        document.addEventListener("mouseup", up);
+        document.addEventListener("mousedown", down);
+
+        /* importante, para que vaya bien, hay que establecer aquí el estilo del borde de todos los div
+	que son de la clase principal */
+        divs = Array.from(document.querySelectorAll(".principal"));
+        divs.forEach((divPrincipal) => {
+          let colorBorde = "#" + (((1 << 24) * Math.random()) | 0).toString(16);
+          divPrincipal.style.border = "2px solid " + colorBorde;
+        });
+      }
+
+      /********** DOMContentLoaded ***********************/
+      document.addEventListener("DOMContentLoaded", inicializar);
+    </script>
+  </head>
+  <body>
+    <div id="superior" class="principal"></div>
+
+    <div id="central" class="principal"></div>
+    <div id="inferior" class="principal"></div>
+  </body>
+</html>
