@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viewport</title>
+    <script>
+      function showData() {
+        let div = document.querySelector("#viewport");
+        div.innerHTML =
+          "<p>devicePixelRatio " + window.devicePixelRatio + "</p>";
+        div.innerHTML +=
+          "<p>altura del viewport " + window.visualViewport.height + "</p>";
+        div.innerHTML +=
+          "<p>anchura del viewport " + window.visualViewport.width + "</p>";
+        div.innerHTML +=
+          "<p>altura de la ventana " + window.outerHeight + "</p>";
+        div.innerHTML +=
+          "<p>anchura de la ventana " + window.outerWidth + "</p>";
+        div.innerHTML +=
+          "<p>viewport height = " +
+          visualViewport.height +
+          " viewport width = " +
+          visualViewport.width +
+          " viewport scale = " +
+          visualViewport.scale +
+          "</p>";
+        div.innerHTML +=
+          "<p>screen height = " +
+          screen.height +
+          " screen width = " +
+          screen.width +
+          "</p>";
+        div.innerHTML +=
+          "<p>Altura maxima de la ventana: " + screen.availHeight + "</p>";
+        let root = document.body;
+        div.innerHTML +=
+          "<p>root font-size: " +
+          window.getComputedStyle(root).fontSize +
+          "</p>";
+        div.innerHTML +=
+          "<p>matchMedia (max-width: 600px) : " +
+          window.matchMedia("(max-width: 600px)").matches +
+          "</p>";
+      }
+
+      function ejercicio2() {
+        let root = document.body;
+        let rootFontSize = parseInt(window.getComputedStyle(root).fontSize);
+        let doble = document.querySelector(".doble");
+        doble.style.fontSize = rootFontSize * 2;
+      }
+
+      function inicializar() {
+        showData();
+        window.addEventListener("resize", showData);
+        ejercicio2();
+      }
+
+      document.addEventListener("DOMContentLoaded", inicializar);
+    </script>
+    <style>
+      :root {
+        font-size: 0.8cm;
+      }
+      h2 {
+        font-size: inherit;
+      }
+      #viewport {
+        border: 1px solid black;
+        padding: 0px 15px;
+      }
+
+      .doble {
+        font-size: 2rem;
+        border: 1px solid red;
+      }
+
+      .mitadAncho {
+        width: 50%;
+        font-size: 0.5em;
+        border: 1px solid blue;
+      }
+      .tercio {
+        width: 33vw;
+        font-size: 2vmin;
+        border: 1px yellow solid;
+      }
+      div > span {
+        font-size: inherit;
+      }
+      p > span {
+        font-size: 0.5rem;
+      }
+      .cmcm {
+        font-size: 1cm;
+      }
+      .cmmm {
+        font-size: 10mm;
+      }
+      .cmin {
+        font-size: 0.3937007874in;
+      }
+      .cmpx {
+        font-size: 37.7952755906px;
+      }
+      .cmpt {
+        font-size: 28.3464567pt;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Div sin estilo definido</div>
+    <h1>Información obtenida desde javascript</h1>
+    <div id="viewport"></div>
+    <h2>Ejercicio (esto es un h2 )</h2>
+    Esta letra es normal y la puedes usar para tomar referencia
+    <div class="doble">
+      Esta letra es doble que la del body
+
+      <div class="mitadAncho">
+        Este div es la mitad de ancho que el exterior y la letra es la mitad de
+        grande que el exterior
+      </div>
+
+      <span>
+        Esto es un span y su letra es igual a la del texto "esta letra es el
+        doble que la del body"</span
+      >
+
+      <div class="tercio">
+        Este div ocupa un tercio de la pantalla siempre y la letra ocupa un 2%
+        de la pantalla
+      </div>
+    </div>
+    <p>
+      <span>
+        Esto es otro span normal y su letra es la mitad que la del body</span
+      >
+    </p>
+    <div>
+      La siguientes letras "A" deben tener todas una altura de 1cm, pero cada
+      una se lograrÃ¡ usando una unidad absoluta diferente (cm, mm, in, pt, px
+      )"
+    </div>
+
+    <div class="cmcm">A</div>
+    <div class="cmmm">A</div>
+    <div class="cmin">A</div>
+    <div class="cmpx">A</div>
+    <div class="cmpt">A</div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+#exercici {
+  width: 700px;
+  margin: 500px 100px;
+  border-width: 10px 20px 30px 40px;
+  border-color: violet blueviolet blue green;
+  border-radius: 10px;
+  border-style: solid;
+  box-shadow: 10px 15px lightgreen;
+  outline: 10px dotted red;
+  /* rotate: 30deg; */
+  outline-offset: 20px;
+  text-decoration: underline wavy lightblue;
+  padding: 3px;
+  transform: rotate(30deg);
+}

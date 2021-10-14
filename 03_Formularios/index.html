@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
     <script>
       let comp;
       let colorDOM;
@@ -14,11 +21,12 @@
       let imagenDOM;
       let revolucionesDOM;
       let revolucionesMostrar;
+      let resetDOM;
+      let imagenMostrar;
+      let divColor;
 
       function pintar() {
-        comp = document.getElementById("divColor");
-
-        comp.style.backgroundColor = colorDOM.value;
+        divColor.style.backgroundColor = colorDOM.value;
       }
 
       function cambiarPlaceholder() {
@@ -44,19 +52,35 @@
 
       function escribirVelocidad() {
         let velocidad = velocidadDOM.value;
-        velocidadDOM.value = velocidad + " km/h";
+        if (velocidad.length != 0) {
+          velocidadDOM.value = velocidad + " km/h";
+        }
+      }
+
+      function removerVelocidad() {
+        let velocidad = velocidadDOM.value;
+        velocidadDOM.value = velocidad.replace(" km/h", "");
       }
 
       function mostrarImagen() {
-        let imagenMostrar = document.getElementById("imagenMostrar");
-        let path = (window.URL || window.webkitURL).createObjectURL(
-          imagenDOM.files[0]
-        );
-        imagenMostrar.src = path;
+        // let path = (window.URL || window.webkitURL).createObjectURL(
+        //   imagenDOM.files[0]
+        // );
+        // imagenMostrar.src = path;
+        let lectorF = new FileReader();
+        lectorF.readAsDataURL(imagenDOM.files[0]);
+        lectorF.onload = () => {
+          imagenMostrar.src = lectorF.result;
+        };
       }
 
       function mostrarRevoluciones() {
         revolucionesMostrar.innerText = revolucionesDOM.value;
+      }
+
+      function resetForm() {
+        imagenMostrar.src = "";
+        divColor.style.backgroundColor = "";
       }
 
       function inicializar() {
@@ -68,123 +92,265 @@
         cambiarPlaceholder();
         velocidadDOM = document.getElementById("velocidad");
         velocidadDOM.addEventListener("focusout", escribirVelocidad);
+        velocidadDOM.addEventListener("focusin", removerVelocidad);
         imagenDOM = document.getElementById("imagen");
         imagenDOM.addEventListener("change", mostrarImagen);
         revolucionesDOM = document.getElementById("revoluciones");
         revolucionesMostrar = document.getElementById("revolucionesMostrar");
         revolucionesDOM.addEventListener("change", mostrarRevoluciones);
         mostrarRevoluciones();
+        resetDOM = document.querySelector("#reset");
+        resetDOM.addEventListener("click", resetForm);
+        imagenMostrar = document.getElementById("imagenMostrar");
+        divColor = document.getElementById("divColor");
       }
 
       document.addEventListener("DOMContentLoaded", inicializar);
     </script>
   </head>
   <body>
-    <form>
-      <fieldset class="border-gray-500">
-        <legend>Opciones principales</legend>
-        <label for="marca">Marca</label>
-        <select name="marca" id="marca" onchange="changePlaceholder()">
-          <option value="citroen">Citroen</option>
-          <option value="peugeot">Peugeot</option>
-          <option value="ford">Ford</option>
-          <option value="seat">Seat</option></select
-        ><br />
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-6">
+          <form class="mb-3">
+            <fieldset class="border p-3 my-3">
+              <legend>Opciones principales</legend>
+              <div class="mb-3 form-floating">
+                <select name="marca" id="marca" class="form-select">
+                  <option value="citroen">Citroen</option>
+                  <option value="peugeot">Peugeot</option>
+                  <option value="ford">Ford</option>
+                  <option value="seat">Seat</option>
+                </select>
+                <label for="marca" class="form-label">Marca</label>
+              </div>
 
-        <label for="modelo"> Modelo </label>
-        <input type="text" name="modelo" id="modelo" /><br />
+              <div class="mb-3">
+                <label for="modelo" class="form-label"> Modelo </label>
+                <input
+                  type="text"
+                  name="modelo"
+                  id="modelo"
+                  class="form-control"
+                />
+              </div>
 
-        <label for="pais"> País de fabricación </label>
-        <select name="pais" id="pais">
-          <optgroup label="America">
-            <option value="usa">USA</option>
-            <option value="canada">Canada</option>
-            <option value="mexico">Mexico</option>
-          </optgroup>
-          <optgroup label="Europa">
-            <option value="alemania">Alemania</option>
-            <option value="espana">España</option>
-            <option value="italia">Italia</option>
-          </optgroup>
-          <optgroup label="Asia">
-            <option value="japon">Japón</option>
-            <option value="china">China</option>
-            <option value="corea">Corea</option>
-          </optgroup>
-        </select>
-      </fieldset>
-      <label for="cilindrada">Cilindrada</label>
-      <input type="number" name="cilindrada" id="cilindrada" max="9999" /><br />
-      <label for="revoluciones">Revoluciones</label>
-      <input
-        type="range"
-        name="revoluciones"
-        id="revoluciones"
-        min="4000"
-        max="22000"
-      />
-      <span id="revolucionesMostrar"></span>
-      <br />
-      <label for="motor">Tipo de motor</label>
-      <select name="motor" id="motor">
-        <option value="12V">12V</option>
-        <option value="10V">10V</option>
-        <option value="8V">8V</option>
-        <option value="6V">6V</option>
-        <option value="6L">6L</option>
-        <option value="4Boxer">4Boxer</option>
-        <option value="4Linea">4Linea</option></select
-      ><br />
-      <label for="imagen">Imágen</label>
-      <input type="file" name="imagen" id="imagen" /><br />
-      <label for="velocidad">Velocidad</label>
-      <input type="text" id="velocidad" /><br />
-      <label>Combustible</label>
-      <input
-        type="radio"
-        id="diesel"
-        class="form-radio"
-        name="combustible"
-        value="diesel"
-      />
-      <label for="diesel">Diesel</label>
-      <input
-        type="radio"
-        id="gasolina"
-        class="form-radio"
-        name="combustible"
-        value="gasolina"
-      />
-      <label for="gasolina">Gasolina</label>
-      <input
-        type="radio"
-        id="alcohol"
-        class="form-radio"
-        name="combustible"
-        value="alcohol"
-      />
-      <label for="alcohol">Alcohol</label>
-      <input
-        type="radio"
-        id="hidrogeno"
-        class="form-radio"
-        name="combustible"
-        value="hidrogeno"
-      />
-      <label for="hidrogeno">Hidrogeno</label><br />
-      <label>En producción</label>
-      <input type="checkbox" name="produccion" id="produccion" /><br />
-      <label for="name" class="absolute left-2 transition-all bg-white px-1"
-        >Código interno</label
-      >
-      <input type="text" pattern="[A-D]{1,1}[0-9]{1,2}" /><br />
-      <div id="divColor">
-        <label for="color">Color</label>
-        <input type="color" name="color" id="color" /><br />
+              <div class="mb-3 form-floating">
+                <select name="pais" id="pais" class="form-select">
+                  <optgroup label="America">
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="mexico">Mexico</option>
+                  </optgroup>
+                  <optgroup label="Europa">
+                    <option value="alemania">Alemania</option>
+                    <option value="espana">España</option>
+                    <option value="italia">Italia</option>
+                  </optgroup>
+                  <optgroup label="Asia">
+                    <option value="japon">Japón</option>
+                    <option value="china">China</option>
+                    <option value="corea">Corea</option>
+                  </optgroup>
+                </select>
+                <label for="pais" class="form-label">
+                  País de fabricación
+                </label>
+              </div>
+            </fieldset>
+            <div class="mb-3 form-floating">
+              <input
+                type="number"
+                name="cilindrada"
+                id="cilindrada"
+                max="9999"
+                class="form-control"
+              />
+              <label for="cilindrada" class="form-label">Cilindrada</label>
+            </div>
+
+            <div class="mb-3">
+              <label for="revoluciones" class="form-label">Revoluciones</label>
+              <input
+                type="range"
+                name="revoluciones"
+                id="revoluciones"
+                min="4000"
+                max="22000"
+                class="form-range"
+              />
+              <span id="revolucionesMostrar"></span>
+            </div>
+            <div class="mb-3 form-floating">
+              <select name="motor" id="motor" class="form-select">
+                <option value="12V">12V</option>
+                <option value="10V">10V</option>
+                <option value="8V">8V</option>
+                <option value="6V">6V</option>
+                <option value="6L">6L</option>
+                <option value="4Boxer">4Boxer</option>
+                <option value="4Linea">4Linea</option>
+              </select>
+              <label for="motor" class="form-label">Tipo de motor</label>
+            </div>
+
+            <div class="mb-3">
+              <label for="imagen" class="form-label">Imágen</label>
+              <input
+                type="file"
+                name="imagen"
+                id="imagen"
+                class="form-control"
+                accept="image/jpeg image/png"
+              />
+            </div>
+            <div class="mb-3 form-floating">
+              <input
+                type="text"
+                id="velocidad"
+                class="form-control"
+                pattern="[0-9]{1,3}( km/h){0,1}"
+              />
+              <label for="velocidad" class="form-label">Velocidad</label>
+            </div>
+
+            <div class="mb-3 border p-3">
+              <label class="me-3">Combustible: </label>
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  id="diesel"
+                  class="form-check-input"
+                  name="combustible"
+                  value="diesel"
+                />
+                <label for="diesel" class="form-check-label">Diesel</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  id="gasolina"
+                  class="form-check-input"
+                  name="combustible"
+                  value="gasolina"
+                />
+                <label for="gasolina" class="form-check-label">Gasolina</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  id="alcohol"
+                  class="form-check-input"
+                  name="combustible"
+                  value="alcohol"
+                />
+                <label for="alcohol" class="form-check-label">Alcohol</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  id="hidrogeno"
+                  class="form-check-input"
+                  name="combustible"
+                  value="hidrogeno"
+                />
+                <label for="hidrogeno">Hidrogeno</label>
+              </div>
+            </div>
+
+            <div class="mb-3 form-check">
+              <label for="produccion" class="form-check-label"
+                >En producción</label
+              >
+              <input
+                type="checkbox"
+                name="produccion"
+                id="produccion"
+                class="form-check-input"
+              />
+            </div>
+
+            <div class="mb-3 form-floating">
+              <input
+                class="form-control"
+                type="text"
+                pattern="[A-D]{1,1}[0-9]{1,2}"
+              />
+              <label for="name" class="form-label">Código interno</label>
+            </div>
+            <div class="mb-3" id="divColor">
+              <label for="color" class="form-label">Color</label>
+              <input
+                type="color"
+                name="color"
+                id="color"
+                class="form-control form-control-color"
+              />
+            </div>
+            <div class="mb-3 border p-3">
+              <div class="form-check form-check-inline">
+                <input
+                  type="checkbox"
+                  name="asistida"
+                  id="asistida"
+                  class="form-check-input"
+                />
+                <label for="asistida" class="form-check-label"
+                  >Dirección asistida</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="checkbox"
+                  name="elevalunas"
+                  id="elevalunas"
+                  class="form-check-input"
+                />
+                <label for="elevalunas" class="form-check-label"
+                  >Elevalunas</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="checkbox"
+                  name="radiocassette"
+                  id="radiocassette"
+                  class="form-check-input"
+                />
+                <label for="radiocassette" class="form-check-label"
+                  >Radiocassette</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  type="checkbox"
+                  name="antinieblas"
+                  id="antinieblas"
+                  class="form-check-input"
+                />
+                <label for="antinieblas" class="form-check-label"
+                  >Antinieblas</label
+                >
+              </div>
+            </div>
+
+            <input type="submit" value="Enviar" class="btn btn-primary" />
+            <button type="reset" class="btn btn-danger" id="reset">
+              Reiniciar
+            </button>
+          </form>
+        </div>
       </div>
-
-      <input type="submit" value="Enviar" />
-    </form>
-    <img src="#" alt="#" id="imagenMostrar" width="500px" />
+      <div class="row justify-content-around">
+        <div class="col-6">
+          <img src="#" alt="#" id="imagenMostrar" width="100%" />
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

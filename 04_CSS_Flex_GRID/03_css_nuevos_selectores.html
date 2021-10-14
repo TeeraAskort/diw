@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectores</title>
+    <style>
+      * {
+        color: peru;
+      }
+      .miClase {
+        text-align: center;
+      }
+      div.miClase {
+        color: tomato;
+        font-weight: bolder;
+      }
+      [miAtributo] {
+        color: thistle;
+      }
+      [class~="miClase"] {
+        color: blueviolet;
+      }
+      [class|="lolo"] {
+        color: burlywood;
+      }
+      [class^="lolo"] {
+        color: cadetblue;
+        font-size: large;
+      }
+      [class$="lolo"] {
+        color: cornflowerblue;
+      }
+      [class*="miClase"] {
+        color: crimson;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 miAtributo="hola">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ab
+      saepe! Debitis iure mollitia sunt deleniti unde dolores perferendis
+      repellat, sit, consequatur veniam recusandae impedit. Veniam dolorum quod
+      voluptas quia?
+    </h1>
+    <div class="miClase">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eligendi
+      quam ea aliquid id repellendus deleniti voluptatibus numquam harum
+      quibusdam iusto, error ut, illum reprehenderit enim? Magni nemo eveniet
+      inventore?
+    </div>
+    <p class="miClase">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates natus
+      commodi, adipisci molestias ratione voluptate quasi dicta iusto tempore
+      molestiae omnis obcaecati mollitia sequi nemo libero ducimus aliquam ut
+      suscipit.
+    </p>
+    <h6 class="lolo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quam
+      magni eaque iusto! Soluta, autem voluptatibus incidunt quo atque veniam
+      repudiandae, iure quam rem aliquid cumque voluptatum fugiat magni cum!
+    </h6>
+    <h6 class="hola adios lolo">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores,
+      aperiam qui. Facilis similique eveniet, tempore est rem quasi quae
+      delectus excepturi porro, nostrum corrupti. Blanditiis quis sit eligendi
+      et reprehenderit!
+    </h6>
+    <h6 class="lolo hola adios">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+      repellendus at, animi, nisi quae similique voluptatum pariatur, dolores
+      expedita nostrum repudiandae modi voluptatem culpa doloremque quidem
+      dolorum libero esse velit.
+    </h6>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ut
+      sapiente consequatur, tempora voluptas facere. Quidem impedit, itaque
+      labore praesentium id, quibusdam eius ratione dolores blanditiis nisi
+      officia adipisci unde.
+    </p>
+    <b>&lt;h6</b><span style="color: #27ae60"> class=</span
+    ><span style="color: #f44f4f">&quot;lolo hola adios&quot;</span><b>&gt;</b>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+    repellendus at, animi, nisi quae similique voluptatum pariatur, dolores
+    expedita nostrum repudiandae modi voluptatem culpa doloremque quidem dolorum
+    libero esse velit.
+    <b>&lt;/h6&gt;</b>
+  </body>
+</html>

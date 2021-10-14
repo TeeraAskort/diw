@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Importancia</title>
+
+    <style>
+      p {
+        color: palegreen;
+        background: tomato;
+      }
+
+      #plutonio {
+        color: peru;
+        background: slateblue;
+      }
+
+      #uranio {
+        color: plum;
+        background: radial-gradient(teal, aqua) !important;
+      }
+
+      .explotido {
+        color: wheat;
+        background: olivedrab;
+      }
+    </style>
+    <link rel="stylesheet" href="./02_css_estilos.css" />
+  </head>
+  <body>
+    <p id="plutonio" class="explotido" style="background: palegoldenrod">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+      expedita omnis modi minus quasi soluta, earum nulla rerum, voluptatem ut
+      ad. Odio error sed cum mollitia, similique placeat magnam neque. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Provident similique
+      assumenda deleniti odio quisquam expedita sit optio, fugiat autem
+      repellendus sunt inventore dolorum fuga molestiae quidem consectetur
+      beatae illum quam.
+    </p>
+
+    <p id="uranio" class="explotido" style="color: palevioletred">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores cumque
+      ipsum odio deserunt reprehenderit! Quos, impedit nostrum ipsum minus dicta
+      amet voluptates sed sit, at molestias, sunt officia earum placeat? Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Ipsa consectetur
+      obcaecati necessitatibus, totam incidunt atque! Officia provident, nulla
+      ea error, non sint voluptate accusantium quibusdam distinctio cumque aut,
+      ab velit.
+    </p>
+
+    <div id="boro" class="explotido">Conflicto entre archivos</div>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./05_css_basico.css" />
+    <style>
+      .inundacion {
+        border: 2px solid peru;
+        border-radius: 5px;
+      }
+
+      .maremoto {
+        color: rebeccapurple;
+      }
+    </style>
+
+    <script>
+      let target = undefined;
+      let dragStart = 0;
+
+      function mouseDownHandler(event) {
+        dragStart = event.clientX;
+        target = event.target;
+      }
+
+      function mouseUpHandler(event) {
+        let dragEnd = event.clientX;
+        console.log(target);
+
+        if (dragStart > dragEnd) {
+          target.style.textAlign = "start";
+        } else {
+          target.style.textAlign = "end";
+        }
+      }
+
+      function click(event) {
+        // let x = event.clientX;
+        // let y = event.clientY;
+        // let element = document.elementFromPoint(x, y);
+        let element = event.target;
+        let style = window.getComputedStyle(element).backgroundColor;
+        console.log("Color de fondo: " + style);
+        // element.style.color = "tomato";
+      }
+
+      function inicializar() {
+        document.addEventListener("click", click);
+
+        let elDivHojas = document.getElementById("hojas");
+        let hojas = document.styleSheets;
+        let i = 0;
+        // for (let i = 0; i < hojas.length; i++) {
+        //   elDivHojas.innerHTML += "" + hojas[i].href + "<br>";
+        // }
+        let arrayHojas = [...hojas];
+
+        arrayHojas.forEach((hoja) => {
+          elDivHojas.innerHTML += "" + hoja.href + "<br>";
+        });
+
+        console.log(arrayHojas);
+
+        let divReglas = document.querySelector("#reglas");
+        arrayHojas.forEach((hoja) => {
+          let rules = [...hoja.cssRules];
+          rules.forEach((rule) => {
+            divReglas.innerHTML += "" + rule.cssText + "<br>";
+          });
+        });
+
+        document.addEventListener("mousedown", mouseDownHandler);
+        document.addEventListener("mouseup", mouseUpHandler);
+      }
+
+      document.addEventListener("DOMContentLoaded", inicializar);
+    </script>
+  </head>
+  <body>
+    <h3>Hojas</h3>
+    <div id="hojas"></div>
+
+    <h3>Reglas</h3>
+    <div id="reglas"></div>
+
+    <p class="volcan">Esto es un volcan</p>
+    <p class="terremoto">Esto es un terremoto</p>
+    <p class="maremoto">Esto es un maremoto</p>
+    <p class="inundacion">Esto es una inundacion</p>
+  </body>
+</html>

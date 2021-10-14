@@ -1,0 +1,15 @@
+.volcan {
+  border: 4px greenyellow solid;
+  background-color: hotpink;
+}
+
+.terremoto {
+  background-color: grey;
+  color: aliceblue;
+}
+
+.maremoto {
+  border: 1em groove blueviolet;
+  border-radius: 20px;
+  background: cyan;
+}

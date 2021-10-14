@@ -1,0 +1,13 @@
+p {
+  border: 1px powderblue solid;
+  color: aliceblue;
+}
+
+.explotido {
+  border: 2px palevioletred dotted;
+  color: aliceblue;
+}
+
+#uranio {
+  border: 1rem lawngreen ridge;
+}

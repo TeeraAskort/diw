@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>03_css_nuevos_selectores.html</title>
+</head>
+<!-- Highlighting: "HTML" -->
+<body>
+<pre style='color:#cfcfc2;'>
+<b><span style='color:#2980b9;'>&lt;!DOCTYPE </span></b>html<b><span style='color:#2980b9;'>&gt;</span></b>
+<b>&lt;html</b><span style='color:#27ae60;'> lang=</span><span style='color:#f44f4f;'>&quot;en&quot;</span><b>&gt;</b>
+  <b>&lt;head&gt;</b>
+    <b>&lt;meta</b><span style='color:#27ae60;'> charset=</span><span style='color:#f44f4f;'>&quot;UTF-8&quot;</span> <b>/&gt;</b>
+    <b>&lt;meta</b><span style='color:#27ae60;'> http-equiv=</span><span style='color:#f44f4f;'>&quot;X-UA-Compatible&quot;</span><span style='color:#27ae60;'> content=</span><span style='color:#f44f4f;'>&quot;IE=edge&quot;</span> <b>/&gt;</b>
+    <b>&lt;meta</b><span style='color:#27ae60;'> name=</span><span style='color:#f44f4f;'>&quot;viewport&quot;</span><span style='color:#27ae60;'> content=</span><span style='color:#f44f4f;'>&quot;width=device-width, initial-scale=1.0&quot;</span> <b>/&gt;</b>
+    <b>&lt;title&gt;</b>Selectores<b>&lt;/title&gt;</b>
+    <b>&lt;style&gt;</b>
+      <span style='color:#3f8058;'>*</span> {
+        <b>color</b>: <b><span style='color:#27aeae;'>peru</span></b><span style='color:#3f8058;'>;</span>
+      }
+      <span style='color:#8e44ad;'>.miClase</span> {
+        <b>text-align</b>: <span style='color:#f67400;'>center</span><span style='color:#3f8058;'>;</span>
+      }
+      div<span style='color:#8e44ad;'>.miClase</span> {
+        <b>color</b>: <b><span style='color:#27aeae;'>tomato</span></b><span style='color:#3f8058;'>;</span>
+        <b>font-weight</b>: <span style='color:#f67400;'>bolder</span><span style='color:#3f8058;'>;</span>
+      }
+      <b><span style='color:#0099ff;'>[miAtributo]</span></b> {
+        <b>color</b>: <b><span style='color:#27aeae;'>thistle</span></b><span style='color:#3f8058;'>;</span>
+      }
+      <b><span style='color:#0099ff;'>[class</span></b><span style='color:#3f8058;'>~=</span><span style='color:#f44f4f;'>&quot;miClase&quot;</span><b><span style='color:#0099ff;'>]</span></b> {
+        <b>color</b>: <b><span style='color:#27aeae;'>blueviolet</span></b><span style='color:#3f8058;'>;</span>
+      }
+      <b><span style='color:#0099ff;'>[class</span></b><span style='color:#3f8058;'>|=</span><span style='color:#f44f4f;'>&quot;lolo&quot;</span><b><span style='color:#0099ff;'>]</span></b> {
+        <b>color</b>: <b><span style='color:#27aeae;'>burlywood</span></b><span style='color:#3f8058;'>;</span>
+      }
+      <b><span style='color:#0099ff;'>[class</span></b><span style='color:#3f8058;'>^=</span><span style='color:#f44f4f;'>&quot;lolo&quot;</span><b><span style='color:#0099ff;'>]</span></b> {
+        <b>color</b>: <b><span style='color:#27aeae;'>cadetblue</span></b><span style='color:#3f8058;'>;</span>
+        <b>font-size</b>: <span style='color:#f67400;'>large</span><span style='color:#3f8058;'>;</span>
+      }
+      <b><span style='color:#0099ff;'>[class</span></b><span style='color:#3f8058;'>$=</span><span style='color:#f44f4f;'>&quot;lolo&quot;</span><b><span style='color:#0099ff;'>]</span></b> {
+        <b>color</b>: <b><span style='color:#27aeae;'>cornflowerblue</span></b><span style='color:#3f8058;'>;</span>
+      }
+      <b><span style='color:#0099ff;'>[class</span></b><span style='color:#3f8058;'>*=</span><span style='color:#f44f4f;'>&quot;miClase&quot;</span><b><span style='color:#0099ff;'>]</span></b> {
+        <b>color</b>: <b><span style='color:#27aeae;'>crimson</span></b><span style='color:#3f8058;'>;</span>
+      }
+    <b>&lt;/style&gt;</b>
+  <b>&lt;/head&gt;</b>
+  <b>&lt;body&gt;</b>
+    <b>&lt;h1</b><span style='color:#27ae60;'> miAtributo=</span><span style='color:#f44f4f;'>&quot;hola&quot;</span><b>&gt;</b>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ab
+      saepe! Debitis iure mollitia sunt deleniti unde dolores perferendis
+      repellat, sit, consequatur veniam recusandae impedit. Veniam dolorum quod
+      voluptas quia?
+    <b>&lt;/h1&gt;</b>
+    <b>&lt;div</b><span style='color:#27ae60;'> class=</span><span style='color:#f44f4f;'>&quot;miClase&quot;</span><b>&gt;</b>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eligendi
+      quam ea aliquid id repellendus deleniti voluptatibus numquam harum
+      quibusdam iusto, error ut, illum reprehenderit enim? Magni nemo eveniet
+      inventore?
+    <b>&lt;/div&gt;</b>
+    <b>&lt;p</b><span style='color:#27ae60;'> class=</span><span style='color:#f44f4f;'>&quot;miClase&quot;</span><b>&gt;</b>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates natus
+      commodi, adipisci molestias ratione voluptate quasi dicta iusto tempore
+      molestiae omnis obcaecati mollitia sequi nemo libero ducimus aliquam ut
+      suscipit.
+    <b>&lt;/p&gt;</b>
+    <b>&lt;h6</b><span style='color:#27ae60;'> class=</span><span style='color:#f44f4f;'>&quot;lolo&quot;</span><b>&gt;</b>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quam
+      magni eaque iusto! Soluta, autem voluptatibus incidunt quo atque veniam
+      repudiandae, iure quam rem aliquid cumque voluptatum fugiat magni cum!
+    <b>&lt;/h6&gt;</b>
+    <b>&lt;h6</b><span style='color:#27ae60;'> class=</span><span style='color:#f44f4f;'>&quot;hola adios lolo&quot;</span><b>&gt;</b>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores,
+      aperiam qui. Facilis similique eveniet, tempore est rem quasi quae
+      delectus excepturi porro, nostrum corrupti. Blanditiis quis sit eligendi
+      et reprehenderit!
+    <b>&lt;/h6&gt;</b>
+    <b>&lt;h6</b><span style='color:#27ae60;'> class=</span><span style='color:#f44f4f;'>&quot;lolo hola adios&quot;</span><b>&gt;</b>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+      repellendus at, animi, nisi quae similique voluptatum pariatur, dolores
+      expedita nostrum repudiandae modi voluptatem culpa doloremque quidem
+      dolorum libero esse velit.
+    <b>&lt;/h6&gt;</b>
+    <b>&lt;p&gt;</b>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ut
+      sapiente consequatur, tempora voluptas facere. Quidem impedit, itaque
+      labore praesentium id, quibusdam eius ratione dolores blanditiis nisi
+      officia adipisci unde.
+    <b>&lt;/p&gt;</b>
+
+    ``` lang-html
+    <b>&lt;h6</b><span style='color:#27ae60;'> class=</span><span style='color:#f44f4f;'>&quot;lolo hola adios&quot;</span><b>&gt;</b>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+      repellendus at, animi, nisi quae similique voluptatum pariatur, dolores
+      expedita nostrum repudiandae modi voluptatem culpa doloremque quidem
+      dolorum libero esse velit.
+    <b>&lt;/h6&gt;</b>
+    ```
+  <b>&lt;/body&gt;</b>
+<b>&lt;/html&gt;</b>
+</pre>
+</body>
+</html>
