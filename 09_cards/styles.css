@@ -1,0 +1,76 @@
+body {
+  background: radial-gradient(rgb(196, 92, 196), purple);
+  height: 100vh;
+}
+
+.card {
+  width: 800px;
+  display: flex;
+  margin: 25vh auto;
+  float: none;
+}
+
+.card__left {
+  flex: 20%;
+  padding: 25px;
+  background-color: rgb(58, 58, 58);
+}
+
+.card__left > img {
+  width: 100%;
+}
+
+.card__right {
+  flex: 80%;
+  padding: 20px;
+  background-color: rgb(80, 79, 79);
+}
+
+.card__title,
+label,
+.form__submit {
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.card__title {
+  font-weight: bold;
+}
+
+.form__names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form__submit {
+  background-color: rgb(67, 190, 190);
+  border-radius: 15px;
+  border: 0px;
+  width: 200px;
+  height: 40px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+input {
+  background-color: inherit;
+  border: 0px;
+  border-bottom: 1px solid white;
+  height: 25px;
+  margin: 10px 0;
+  color: white;
+}
+
+textarea {
+  background-color: inherit;
+  border: 1px solid white;
+  height: 90px;
+  margin: 10px 0;
+  color: white;
+}

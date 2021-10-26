@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./01_flexbox.css" />
+
+    <style></style>
+  </head>
+
+  <body>
+    <h1>Sin container tipo flex</h1>
+
+    <div class="container-base">
+      <div class="item-base">1</div>
+      <div class="item-base">2</div>
+      <div class="item-base">3</div>
+      <div class="item-base">4</div>
+      <div class="item-base">5</div>
+    </div>
+
+    <h1>Container flex básico</h1>
+    <div>
+      flex-direction:row; o eje principal horizontal (por defecto si no se pone
+      flex-direction:
+    </div>
+    <div class="container-base flex-basico-00">
+      <div class="item-base">1</div>
+      <div class="item-base">2</div>
+      <div class="item-base">3</div>
+      <div class="item-base">4</div>
+      <div class="item-base">5</div>
+    </div>
+
+    <h1>Container flex eje principal vertical</h1>
+    <div>flex-direction:column; o eje principal verticall</div>
+    <div class="container-base flex-vertical-01">
+      <div class="item-base">1</div>
+      <div class="item-base">2</div>
+      <div class="item-base">3</div>
+      <div class="item-base">4</div>
+      <div class="item-base">5</div>
+    </div>
+
+    <h1>(Plantilla) No caben los items</h1>
+    <div></div>
+    <div class="container-base flex-basico-00">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+      <div class="item-base item-grande">6</div>
+      <div class="item-grande item-base">7</div>
+      <div class="item-base item-grande">8</div>
+      <div class="item-base item-grande">9</div>
+      <div class="item-base item-grande">10</div>
+    </div>
+
+    <h1>No caben los items pero...</h1>
+    <div>flex-wrap:wrap ; nos arregla el problema</div>
+    <div class="container-base flex-wrap-02">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+      <div class="item-base item-grande">6</div>
+      <div class="item-grande item-base">7</div>
+      <div class="item-base item-grande">8</div>
+      <div class="item-base item-grande">9</div>
+      <div class="item-base item-grande">10</div>
+    </div>
+
+    <h1>row reverse + wrap</h1>
+    <div>flex-wrap:wrap con flex-direction row-reverse ;</div>
+    <div class="container-base flex-rowreverse-wrap-03">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+      <div class="item-base item-grande">6</div>
+      <div class="item-grande item-base">7</div>
+      <div class="item-base item-grande">8</div>
+      <div class="item-base item-grande">9</div>
+      <div class="item-base item-grande">10</div>
+    </div>
+
+    <h1>col reverse + wrap</h1>
+    <div>
+      flex-wrap:wrap con flex-direction column-reverse ; (ojo! hay truco para
+      que en este se vea el efecto )
+    </div>
+    <div class="container-base flex-colreverse-wrap-04">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+      <div class="item-base item-grande">6</div>
+      <div class="item-grande item-base">7</div>
+      <div class="item-base item-grande">8</div>
+      <div class="item-base item-grande">9</div>
+      <div class="item-base item-grande">10</div>
+    </div>
+
+    <h1>(Plantilla) sin jutify-content</h1>
+    <div>Sobra espacio con items grandes</div>
+    <div class="container-base flex-basico-00">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+    </div>
+
+    <h1>justify-content: flex-end</h1>
+    <div>flex-direction:row;</div>
+    <div class="container-base flex-justify-end-05">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+    </div>
+
+    <h1>justify-content: space-between</h1>
+    <div>flex-direction:row;</div>
+    <div class="container-base flex-justify-between-06">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+    </div>
+
+    <h1>justify-content: space-around</h1>
+    <div>flex-direction:row;</div>
+    <div class="container-base flex-justify-around-07">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+    </div>
+
+    <h1>justify-content: space-evenly</h1>
+    <div>flex-direction:row;</div>
+    <div class="container-base flex-justify-evenly-08">
+      <div class="item-base item-grande">1</div>
+      <div class="item-base item-grande">2</div>
+      <div class="item-base item-grande">3</div>
+      <div class="item-base item-grande">4</div>
+      <div class="item-base item-grande">5</div>
+    </div>
+
+    <h1>(Plantilla) container alto sin align-items</h1>
+    <div>Sobra espacio vertical</div>
+    <div class="container-alto flex-basico-00">
+      <div class="item-base">1</div>
+      <div class="item-base">2</div>
+      <div class="item-base">3</div>
+      <div class="item-base">4</div>
+      <div class="item-base">5</div>
+    </div>
+
+    <h1>Container alto align-items: flex-end</h1>
+    <div>Sobra espacio vertical</div>
+    <div class="container-alto flex-align-end-09">
+      <div class="item-base">1</div>
+      <div class="item-base">2</div>
+      <div class="item-base">3</div>
+      <div class="item-base">4</div>
+      <div class="item-base">5</div>
+    </div>
+
+    <h1>Container alto align-items: center</h1>
+    <div>Sobra espacio vertical</div>
+    <div class="container-alto flex-align-center-10">
+      <div class="item-base">1</div>
+      <div class="item-base">2</div>
+      <div class="item-base">3</div>
+      <div class="item-base">4</div>
+      <div class="item-base">5</div>
+    </div>
+
+    <h1>Container alto align-items: stretch</h1>
+    <div>Sobra espacio vertical</div>
+    <div class="container-alto flex-align-stretch-11">
+      <div class="item-base item-sinalt">1</div>
+      <div class="item-base item-sinalt">2</div>
+      <div class="item-base item-sinalt">3</div>
+      <div class="item-base item-sinalt">4</div>
+      <div class="item-base item-sinalt">5</div>
+    </div>
+
+    <h1>Container alto align-items: baseline (por hacer)</h1>
+
+    <div>Sobra espacio vertical</div>
+    <div class="container-alto flex-align-baseline-12">
+      <div class="item-base item-sinalt">
+        <h1>1<br />2</h1>
+      </div>
+      <div class="item-base item-sinalt">2<br />2</div>
+      <div class="item-base item-sinalt">3</div>
+      <div class="item-base item-sinalt">
+        <h2>4<br />1</h2>
+      </div>
+      <div class="item-base item-sinalt">5</div>
+    </div>
+
+    <h1>(pantilla align-content)</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-wrap-02">
+      <div class="item-base item-extra">1</div>
+      <div class="item-base item-extra">2</div>
+      <div class="item-base item-extra">3</div>
+      <div class="item-base item-extra">4</div>
+      <div class="item-base item-extra">5</div>
+      <div class="item-base item-extra">6</div>
+      <div class="item-extra item-base">7</div>
+      <div class="item-base item-extra">8</div>
+      <div class="item-base item-extra">9</div>
+      <div class="item-base item-extra">10</div>
+    </div>
+
+    <h1>align-content:start</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-alcontent-start-13">
+      <div class="item-base item-extra">1</div>
+      <div class="item-base item-extra">2</div>
+      <div class="item-base item-extra">3</div>
+      <div class="item-base item-extra">4</div>
+      <div class="item-base item-extra">5</div>
+      <div class="item-base item-extra">6</div>
+      <div class="item-extra item-base">7</div>
+    </div>
+
+    <h1>align-content:space-between</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-alcontent-between-14">
+      <div class="item-base item-extra">1</div>
+      <div class="item-base item-extra">2</div>
+      <div class="item-base item-extra">3</div>
+      <div class="item-base item-extra">4</div>
+      <div class="item-base item-extra">5</div>
+      <div class="item-base item-extra">6</div>
+      <div class="item-extra item-base">7</div>
+    </div>
+
+    <h1>align-content:space-around</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-alcontent-around-15">
+      <div class="item-base item-extra">1</div>
+      <div class="item-base item-extra">2</div>
+      <div class="item-base item-extra">3</div>
+      <div class="item-base item-extra">4</div>
+      <div class="item-base item-extra">5</div>
+      <div class="item-base item-extra">6</div>
+      <div class="item-extra item-base">7</div>
+    </div>
+
+    <h1>align-content:space-evenly</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-alcontent-evenly-16">
+      <div class="item-base item-extra">1</div>
+      <div class="item-base item-extra">2</div>
+      <div class="item-base item-extra">3</div>
+      <div class="item-base item-extra">4</div>
+      <div class="item-base item-extra">5</div>
+      <div class="item-base item-extra">6</div>
+      <div class="item-extra item-base">7</div>
+    </div>
+
+    <h1>Plantilla para align-self: center</h1>
+    <div>párrafo alto</div>
+    <div class="container-muy-alto flex-alcontent-around-15">
+      <div class="item-base item-extra item-gordo">1</div>
+      <div class="item-base item-extra item-gordo">2</div>
+      <div class="item-base item-extra item-gordo">3</div>
+      <div class="item-base item-extra item-gordo">4</div>
+      <div class="item-base item-extra item-gordo">5</div>
+      <div class="item-base item-extra item-tiny-center">6</div>
+      <div class="item-extra item-base item-gordo">7</div>
+      <div class="item-extra item-base item-gordo">8</div>
+      <div class="item-extra item-base item-gordo">9</div>
+      <div class="item-extra item-base item-gordo">10</div>
+    </div>
+
+    <h1>Plantilla para align-self: flex-end</h1>
+    <div>párrafo alto</div>
+    <div class="container-muy-alto flex-alcontent-around-15">
+      <div class="item-base item-extra item-gordo">1</div>
+      <div class="item-base item-extra item-gordo">2</div>
+      <div class="item-base item-extra item-gordo">3</div>
+      <div class="item-base item-extra item-gordo">4</div>
+      <div class="item-base item-extra item-gordo">5</div>
+      <div class="item-base item-extra item-tiny-end">6</div>
+      <div class="item-extra item-base item-gordo">7</div>
+      <div class="item-extra item-base item-gordo">8</div>
+      <div class="item-extra item-base item-gordo">9</div>
+      <div class="item-extra item-base item-gordo">10</div>
+    </div>
+
+    <h1>Plantilla para align-self: flex-start</h1>
+    <div>párrafo alto</div>
+    <div class="container-muy-alto flex-alcontent-around-15">
+      <div class="item-base item-extra item-gordo">1</div>
+      <div class="item-base item-extra item-gordo">2</div>
+      <div class="item-base item-extra item-gordo">3</div>
+      <div class="item-base item-extra item-gordo">4</div>
+      <div class="item-base item-extra item-gordo">5</div>
+      <div class="item-base item-extra item-tiny-start">6</div>
+      <div class="item-extra item-base item-gordo">7</div>
+      <div class="item-extra item-base item-gordo">8</div>
+      <div class="item-extra item-base item-gordo">9</div>
+      <div class="item-extra item-base item-gordo">10</div>
+    </div>
+
+    <h1>Plantilla para align-self: baseline</h1>
+    <div>párrafo alto</div>
+    <div class="container-muy-alto flex-alcontent-around-15">
+      <div class="item-base item-extra item-gordo">1</div>
+      <div class="item-base item-extra item-gordo">2</div>
+      <div class="item-base item-extra item-gordo">3</div>
+      <div class="item-base item-extra item-gordo">4</div>
+      <div class="item-base item-extra item-gordo">5</div>
+      <div class="item-base item-extra item-tiny-baseline">6</div>
+      <div class="item-extra item-base item-gordo">7</div>
+      <div class="item-extra item-base item-gordo">8</div>
+      <div class="item-extra item-base item-gordo">9</div>
+      <div class="item-extra item-base item-gordo">10</div>
+    </div>
+
+    <h1>Plantilla para align-self: stretch</h1>
+    <div>párrafo alto</div>
+    <div class="container-muy-alto flex-alcontent-around-15">
+      <div class="item-base item-extra item-gordo">1</div>
+      <div class="item-base item-extra item-gordo">2</div>
+      <div class="item-base item-extra item-gordo">3</div>
+      <div class="item-base item-extra item-gordo">4</div>
+      <div class="item-base item-extra item-gordo">5</div>
+      <div class="item-base item-extra item-tiny-stretch">6</div>
+      <div class="item-extra item-base item-gordo">7</div>
+      <div class="item-extra item-base item-gordo">8</div>
+      <div class="item-extra item-base item-tiny-end item-tiny-margin-top">
+        9
+      </div>
+      <div class="item-extra item-base item-gordo">10</div>
+    </div>
+
+    <h1>flex-gap: 16</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-gap-16">
+      <div class="item-base-2 item-extra">1</div>
+      <div class="item-base-2 item-extra">2</div>
+      <div class="item-base-2 item-extra">3</div>
+      <div class="item-base-2 item-extra">4</div>
+      <div class="item-base-2 item-extra">5</div>
+      <div class="item-base-2 item-extra">6</div>
+      <div class="item-base-2 item-extra">7</div>
+      <div class="item-base-2 item-extra">8</div>
+      <div class="item-base-2 item-extra">9</div>
+      <div class="item-extra item-base-2">10</div>
+      <div class="item-extra item-base-2">11</div>
+      <div class="item-extra item-base-2">12</div>
+      <div class="item-extra item-base-2">13</div>
+      <div class="item-extra item-base-2">14</div>
+      <div class="item-extra item-base-2">15</div>
+      <div class="item-extra item-base-2">16</div>
+      <div class="item-extra item-base-2">17</div>
+      <div class="item-extra item-base-2">18</div>
+    </div>
+
+    <h1>(pantilla align-content)</h1>
+    <div>párrafo alto</div>
+    <div class="container-alto flex-wrap-02">
+      <div class="item-base item-extra flex-25 item-no-margin">25</div>
+      <div class="item-base item-extra flex-25 item-no-margin">25</div>
+      <div class="item-base item-extra flex-25 item-no-margin">25</div>
+      <div class="item-base item-extra flex-50 item-no-margin">50</div>
+      <div class="item-base item-extra flex-25 item-no-margin">25</div>
+      <div class="item-base item-extra flex-25 item-no-margin">25</div>
+      <div class="item-extra item-base flex-50 item-no-margin">50</div>
+      <div class="item-base item-extra flex-50 item-no-margin">50</div>
+      <div class="item-base item-extra flex-50 item-no-margin">50</div>
+      <div class="item-base item-extra flex-25 item-no-margin">25</div>
+    </div>
+  </body>
+</html>
