@@ -1,0 +1,21 @@
+.grid-content1 {
+  background-color: lightcoral;
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 50px min-content max-content min-content;
+}
+
+.grid-content2 {
+  background-color: blanchedalmond;
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 100px minmax(min-content, max-content) 100px 100px;
+}
+
+.item {
+  border: 1px solid purple;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  background-color: bisque;
+}

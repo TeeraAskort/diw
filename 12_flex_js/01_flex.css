@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: lightcyan;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* border: 1px solid blue;
+  margin: 20px; */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  background-color: bisque;
+  /* border: 1px solid lightcoral;
+  border-radius: 5px;
+  padding: 10px 50px;
+  margin: 10px 0; */
+}

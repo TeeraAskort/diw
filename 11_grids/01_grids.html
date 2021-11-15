@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grids</title>
+  <link rel="stylesheet" href="01_grids.css">
+</head>
+
+<body>
+  <h1>Pagina de experimentación con grids</h1>
+
+  <!-- <script>
+    let letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXZ".split("");
+    let cantidadDivs = 3;
+    for (let i = 0; i < cantidadDivs; i++) {
+      let div = document.createElement("div");
+      div.classList.add("gc");
+      for (let letra of letras) {
+        let divLetra = document.createElement("div");
+        divLetra.classList.add("grid-item");
+        divLetra.innerText = i + 1 + " - " + letra;
+        div.append(divLetra);
+      }
+      document.body.append(div);
+    }
+    document.body.innerHTML += "Hola Mundo!";
+  </script> -->
+
+  <script>
+    let numCeldas = 12;
+    let numDivs = 20;
+    let cadena = '<div id="auto">'
+    for (let i = 1; i <= numDivs; i++) {
+      cadena += '<div class="gc">';
+      for (let j = 0; j < numCeldas; j++) {
+        cadena +=
+          '<div class="grid-item">' +
+          i +
+          " - " +
+          String.fromCharCode(65 + j) +
+          "</div>";
+      }
+      cadena += "</div>";
+    }
+    cadena += "</div>"
+    document.body.innerHTML += cadena;
+  </script>
+
+  <footer>s'acabao la experimentación</footer>
+</body>
+
+</html>

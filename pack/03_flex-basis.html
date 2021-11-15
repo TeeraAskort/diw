@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="./03_flex-basis.css">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+<p><a href="https://www.w3schools.com/cssref/css3_pr_flex-basis.asp">Referencia</a> Cada nuevo color implementa la clase anunciada</p>
+
+<h3> Container base e items base  </h3>
+<div> Nada especial, comprueba que los items se estrujan </div>
+<div class="flex-base">
+	<div class="item-base"> 1 1</div>
+	<div class="item-base"> 20 2</div>
+	<div class="item-base"> 3000  3</div>
+	<div class="item-base"> 40000  4</div>
+	<div class="item-base"> 50000000  5</div>
+	<div class="item-base"> 1 1</div>
+	<div class="item-base"> 20 2</div>
+	<div class="item-base"> 3000  3</div>
+	<div class="item-base"> 40000  4</div>
+	<div class="item-base"> 50000000  5</div>
+</div>
+
+<h3> Container base  +  flex-basis: 5em;</h3>
+<div> Los items oliva tienen flex-basis:5em; con espacio inician su tamaño en esa anchura </div>
+<div class="flex-base">
+	<div class="item-base item-fb-5em "> 1 1</div>
+	<div class="item-base item-fb-5em "> 20 2</div>
+	<div class="item-base item-fb-5em "> 300  3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-5em "> 50000000 5</div>
+		<div class="item-base item-fb-5em "> 1 1</div>
+	<div class="item-base item-fb-5em "> 20 2</div>
+	<div class="item-base item-fb-5em "> 300  3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-5em "> 50000000 5</div>
+</div>
+
+<h3> Container base  + flex-basis: 1em; </h3>
+
+<div class="flex-base">
+	<div class="item-base item-fb-1em "> 1 1</div>
+	<div class="item-base item-fb-1em "> 20 2</div>
+	<div class="item-base item-fb-1em "> 300  3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-1em "> 50000000 5</div>
+</div>
+
+
+<h3> Container base +  flex-basis: 10px;</h3>
+
+<div class="flex-base">
+	<div class="item-base item-fb-10px "> 1 1</div>
+	<div class="item-base item-fb-10px "> 20 2</div>
+	<div class="item-base item-fb-10px "> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-1em "> 50000 5</div>
+</div>
+
+<h3> Container base +  flex-basis: 10px; + flex-grow:2 (darkgreen);</h3>
+
+<div class="flex-base">
+	<div class="item-base item-fb-10px "> 1 1</div>
+	<div class="item-base item-fb-10px item-grow2"> 20 2</div>
+	<div class="item-base item-fb-10px item-grow2 "> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-1em "> 50000 5</div>
+</div>
+
+<h3> Container base +  flex-basis: 10px; + flex-grow:4 (lightreen);</h3>
+<div> Podemos repartir el espacio para que se crezca de forma diferente según flex-grow: </div>
+<div class="flex-base">
+	<div class="item-base item-fb-10px "> 1 1</div>
+	<div class="item-base item-fb-10px item-grow4"> 20 2</div>
+	<div class="item-base item-fb-10px item-grow2 "> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-1em "> 50000 5</div>
+</div>
+
+<h3> Container base +  flex-basis: 10px; flex-grow:1; flex-shrink:1; </h3>
+<div class="flex-base">
+	<div class="item-base item-fb-10px item-grow-shrink"> 1 1</div>
+	<div class="item-base item-fb-10px item-grow-shrink"> 20 2</div>
+	<div class="item-base item-fb-10px item-grow-shrink"> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-10px"> 50000 5</div>
+</div>
+
+
+<div class="flex-base">
+	<div class="item-base item-fb-10px item-grow-shrink"> 1 1</div>
+	<div class="item-base item-fb-10px item-grow-shrink"> 20 2</div>
+	<div class="item-base item-fb-10px item-grow-shrink"> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base  item-grow-shrink"> 50000 5</div>
+</div>
+
+
+<h3> Container base turoquoise flex-basis:200px + no shrink . border:flex-shrink:1 </h3>
+<div class="flex-base">
+	<div class="item-base item-fb-200px item-shrink"> 1 1</div>
+	<div class="item-base item-fb-200px item-grow-shrink"> 20 2</div>
+	<div class="item-base item-fb-200px item-grow-shrink"> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-fb-200px item-shrink"> 50000 5</div>
+</div>
+
+
+<h3> Responsive (max-width, min width </h3>
+<div class="flex-base flex-wrap">
+	<div class="item-base item-100-200"> 1 1</div>
+	<div class="item-base item-100-200"> 20 2</div>
+	<div class="item-base item-100-200"> 300 3</div>
+	<div class="item-base "> 4000 4</div>
+	<div class="item-base item-100-200"> 50000 5</div>
+</div>
+
+
+</body>
+</html>
+

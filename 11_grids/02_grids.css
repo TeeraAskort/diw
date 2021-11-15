@@ -1,0 +1,36 @@
+body {
+  background-color: lightcyan;
+}
+
+p {
+  margin: 2em;
+}
+
+.gc {
+  margin: 2em;
+  border: 1px solid black;
+  background-color: blanchedalmond;
+  display: grid;
+}
+
+.grid-item {
+  border: 1px solid purple;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.gc:first-of-type {
+  background-color: aquamarine;
+  grid-template-columns: 100px auto auto;
+}
+
+.gc:nth-of-type(2) {
+  background-color: burlywood;
+  grid-template-columns: 3fr 1fr 2fr;
+}
+
+.gc:nth-of-type(3) {
+  background-color: whitesmoke;
+  grid-template-columns: 2fr 5fr 3fr;
+}

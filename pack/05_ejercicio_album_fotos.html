@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./05_ejercicio_album_fotos.css">
+
+<script>
+
+function inicializar() {
+   Array.from(document.getElementsByTagName("*"))
+      .filter(elemento => elemento.classList.contains("foto"))
+      .forEach( elemento => { 
+        var randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
+	console.log("color " + randomColor );
+        elemento.style.background=randomColor;}
+	 );
+
+}
+
+document.addEventListener("DOMContentLoaded",inicializar);
+</script>
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+ <header class="titulares cabecera">
+    <div class="logo">Logo</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 22</a></li>
+        <li><a href="#">Sección 3333</a></li>
+        <li><a href="#">Sección 44444</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+<main class="principal">
+ <aside class="lateral">
+ </aside>
+  <section class="album">
+  <div class="foto"></div>
+  <div class="foto"></div>
+  <div class="foto"></div>
+  <div class="foto"></div>
+  <div class="foto"></div>
+  <div class="foto"></div>
+  </section>
+</main>
+	<footer class="pie"> footer class="pie" Pie de página que debe estar al final </footer>
+
+</body>
+</html>

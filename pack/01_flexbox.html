@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="./01_flexbox.css">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+<h1> Sin container tipo flex  </h1>
+
+<div class="container-base">
+	<div class="item-base"> 1 </div>
+	<div class="item-base"> 2 </div>
+	<div class="item-base"> 3 </div>
+	<div class="item-base"> 4 </div>
+	<div class="item-base"> 5 </div>
+</div>
+
+<h1> Container flex básico </h1>
+<div> flex-direction:row; o eje principal horizontal (por defecto si no se pone flex-direction:</div>
+<div class="container-base flex-basico-00"  >
+	<div class="item-base"> 1 </div>
+	<div class="item-base"> 2 </div>
+	<div class="item-base"> 3 </div>
+	<div class="item-base"> 4 </div>
+	<div class="item-base"> 5 </div>
+</div>
+
+
+<h1> Container flex eje principal vertical </h1>
+<div> flex-direction:column; o eje principal verticall</div>
+<div class="container-base flex-vertical-01"  >
+	<div class="item-base"> 1 </div>
+	<div class="item-base"> 2 </div>
+	<div class="item-base"> 3 </div>
+	<div class="item-base"> 4 </div>
+	<div class="item-base"> 5 </div>
+</div>
+
+
+<h1>(Plantilla) No caben los items </h1>
+<div> Sin configurar nada flex-wrap</div>
+<div class="container-base flex-basico-00"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+	<div class="item-base item-grande"> 6 </div>
+	<div class="item-grande item-base"> 7 </div>
+	<div class="item-base item-grande"> 8 </div>
+	<div class="item-base item-grande"> 9 </div>
+	<div class="item-base item-grande"> 10 </div>	
+</div>
+
+<h1> No caben los items pero... </h1>
+<div>  flex-wrap:wrap ;  nos arregla el problema</div>
+<div class="container-base flex-wrap-02"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+	<div class="item-base item-grande"> 6 </div>
+	<div class="item-grande item-base"> 7 </div>
+	<div class="item-base item-grande"> 8 </div>
+	<div class="item-base item-grande"> 9 </div>
+	<div class="item-base item-grande"> 10 </div>	
+</div>
+
+<h1> row reverse + wrap </h1>
+<div>  flex-wrap:wrap con flex-direction row-reverse ;</div>
+<div class="container-base flex-rowreverse-wrap-03"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+	<div class="item-base item-grande"> 6 </div>
+	<div class="item-grande item-base"> 7 </div>
+	<div class="item-base item-grande"> 8 </div>
+	<div class="item-base item-grande"> 9 </div>
+	<div class="item-base item-grande"> 10 </div>	
+</div>
+
+
+<h1> col reverse + wrap </h1>
+<div>  flex-wrap:wrap con flex-direction column-reverse ; (ojo! hay truco para que en este se vea el efecto )</div>
+<div class="container-base flex-colreverse-wrap-04"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+	<div class="item-base item-grande"> 6 </div>
+	<div class="item-grande item-base"> 7 </div>
+	<div class="item-base item-grande"> 8 </div>
+	<div class="item-base item-grande"> 9 </div>
+	<div class="item-base item-grande"> 10 </div>	
+</div>
+
+
+<h1> (Plantilla) sin jutify-content </h1>
+<div> Sobra espacio con items grandes </div>
+<div class="container-base flex-basico-00"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+</div>
+
+
+<h1> justify-content: flex-end </h1>
+<div> flex-direction:row; </div>
+<div class="container-base flex-justify-end-05"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+</div>
+
+<h1> justify-content: space-between </h1>
+<div> flex-direction:row; </div>
+<div class="container-base flex-justify-between-06"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+</div>
+
+<h1> justify-content: space-around </h1>
+<div> flex-direction:row; </div>
+<div class="container-base flex-justify-around-07"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+</div>
+
+<h1> justify-content: space-evenly </h1>
+<div> flex-direction:row; </div>
+<div class="container-base flex-justify-evenly-08"  >
+	<div class="item-base item-grande"> 1 </div>
+	<div class="item-base item-grande"> 2 </div>
+	<div class="item-base item-grande"> 3 </div>
+	<div class="item-base item-grande"> 4 </div>
+	<div class="item-base item-grande"> 5 </div>
+</div>
+
+
+<h1> (Plantilla) container alto sin align-items
+ </h1>
+<div> Sobra espacio vertical </div>
+<div class="container-alto flex-basico-00"  >
+	<div class="item-base "> 1 </div>
+	<div class="item-base "> 2 </div>
+	<div class="item-base "> 3 </div>
+	<div class="item-base "> 4 </div>
+	<div class="item-base "> 5 </div>
+</div>
+
+<h1> Container alto align-items: flex-end
+ </h1>
+<div> Sobra espacio vertical </div>
+<div class="container-alto flex-align-end-09"  >
+	<div class="item-base "> 1 </div>
+	<div class="item-base "> 2 </div>
+	<div class="item-base "> 3 </div>
+	<div class="item-base "> 4 </div>
+	<div class="item-base "> 5 </div>
+</div>
+
+<h1> Container alto align-items: center
+ </h1>
+<div> Sobra espacio vertical </div>
+<div class="container-alto flex-align-center-10"  >
+	<div class="item-base "> 1 </div>
+	<div class="item-base "> 2 </div>
+	<div class="item-base "> 3 </div>
+	<div class="item-base "> 4 </div>
+	<div class="item-base "> 5 </div>
+</div>
+
+<h1> Container alto align-items: stretch
+ </h1>
+<div> Sobra espacio vertical </div>
+<div class="container-alto flex-align-stretch-11"  >
+	<div class="item-base item-sinalt"> 1 </div>
+	<div class="item-base item-sinalt"> 2 </div>
+	<div class="item-base item-sinalt"> 3 </div>
+	<div class="item-base item-sinalt"> 4 </div>
+	<div class="item-base item-sinalt"> 5 </div>
+</div>
+
+
+<h1> Container alto align-items: baseline (por hacer)</h1>
+
+<div> Sobra espacio vertical </div>
+<div class="container-alto flex-align-baseline-12"  >
+	<div class="item-base item-sinalt"> <h1>1<br>2</h1> </div>
+	<div class="item-base item-sinalt"> 2<br>2 </div>
+	<div class="item-base item-sinalt"> 3 </div>
+	<div class="item-base item-sinalt"> <h2>4<br>1</h2> </div>
+	<div class="item-base item-sinalt"> 5 </div>
+</div>
+
+
+<h1> (pantilla align-content) </h1>
+<div>  párrafo alto </div>
+<div class="container-muy-alto flex-wrap-02"  >
+	<div class="item-base item-extra"> 1 </div>
+	<div class="item-base item-extra"> 2 </div>
+	<div class="item-base item-extra"> 3 </div>
+	<div class="item-base item-extra"> 4 </div>
+	<div class="item-base item-extra"> 5 </div>
+	<div class="item-base item-extra"> 6 </div>
+	<div class="item-extra item-base"> 7 </div>
+	<div class="item-base item-extra"> 8 </div>
+	<div class="item-base item-extra"> 9 </div>
+	<div class="item-base item-extra"> 10 </div>	
+</div>
+
+
+<h1> align-content:start </h1>
+<div>  párrafo alto </div>
+<div class="container-muy-alto flex-alcontent-start-13"  >
+	<div class="item-base item-extra"> 1 </div>
+	<div class="item-base item-extra"> 2 </div>
+	<div class="item-base item-extra"> 3 </div>
+	<div class="item-base item-extra"> 4 </div>
+	<div class="item-base item-extra"> 5 </div>
+	<div class="item-base item-extra"> 6 </div>
+	<div class="item-extra item-base"> 7 </div>
+
+</div>
+
+<h1> align-content:space-between </h1>
+<div>  párrafo alto </div>
+<div class="container-muy-alto flex-alcontent-between-14"  >
+	<div class="item-base item-extra"> 1 </div>
+	<div class="item-base item-extra"> 2 </div>
+	<div class="item-base item-extra"> 3 </div>
+	<div class="item-base item-extra"> 4 </div>
+	<div class="item-base item-extra"> 5 </div>
+	<div class="item-base item-extra"> 6 </div>
+	<div class="item-extra item-base"> 7 </div>
+
+</div>
+
+<h1> align-content:space-around </h1>
+<div>  párrafo alto </div>
+<div class="container-muy-alto flex-alcontent-around-15"  >
+	<div class="item-base item-extra"> 1 </div>
+	<div class="item-base item-extra"> 2 </div>
+	<div class="item-base item-extra"> 3 </div>
+	<div class="item-base item-extra"> 4 </div>
+	<div class="item-base item-extra"> 5 </div>
+	<div class="item-base item-extra"> 6 </div>
+	<div class="item-extra item-base"> 7 </div>
+
+</div>
+
+<h1> align-content:space-evenly </h1>
+<div>  ¿Funcionará? </div>
+<div class="container-muy-alto flex-alcontent-evenly-16"  >
+	<div class="item-base item-extra"> 1 </div>
+	<div class="item-base item-extra"> 2 </div>
+	<div class="item-base item-extra"> 3 </div>
+	<div class="item-base item-extra"> 4 </div>
+	<div class="item-base item-extra"> 5 </div>
+	<div class="item-base item-extra"> 6 </div>
+	<div class="item-extra item-base"> 7 </div>
+
+</div>
+
+<h1 > align-self </h1>
+<h2> Plantilla para align-self </h2>
+<h5>  Posibilidades. align-self: auto|stretch|center|flex-start|flex-end|baseline|initial|inherit; </h5>
+<div class="container-muy-alto flex-wrap-02"  >
+	<div class="item-gordo "> 1 </div>
+	<div class="item-gordo "> 2 </div>
+	<div class="item-base "> 3 </div>
+	<div class="item-gordo "> 4 </div>
+	<div class="item-gordo "> 5 </div>
+	<div class="item-base "> 6 </div>
+	<div class="item-gordo "> 7 </div>
+	<div class="item-gordo "> 8 </div>
+	<div class="item-gordo "> 9 </div>
+	<div class="item-gordo "> 10 </div>	
+</div>
+
+<h2> align-self:center y align-self: flex-end </h2>
+<div class="container-muy-alto flex-wrap-02"  >
+	<div class="item-gordo "> 1 </div>
+	<div class="item-gordo "> 2 </div>
+	<div class="item-gordo "> 3 </div>
+	<div class="item-gordo "> 4 </div>
+	<div class="item-gordo "> 5 </div>
+	<div class="item-base item-self-center "> 6 </div>
+	<div class="item-gordo "> 7 </div>
+	<div class="item-gordo "> 8 </div>
+	<div class="item-base item-self-end"> 9 </div>
+	<div class="item-gordo "> 10 </div>	
+</div>
+
+
+<h2> align-self:stretch y align-self: flex-end </h2>
+<div class="container-muy-alto flex-wrap-02"  >
+	<div class="item-gordo "> 1 </div>
+	<div class="item-gordo "> 2 </div>
+	<div class="item-gordo "> 3 </div>
+	<div class="item-gordo "> 4 </div>
+	<div class="item-gordo "> 5 </div>
+	<div class="item-base item-sinalt item-self-stretch "> 6 </div>
+	<div class="item-gordo "> 7 </div>
+	<div class="item-gordo "> 8 </div>
+	<div class="item-base item-self-end"> 9 </div>
+	<div class="item-gordo "> 10 </div>	
+</div>
+
+<h1> gap, gap-column y gap-row </h1>
+<h2><code> <pre>.flex-gap-17{
+	display: flex ; 
+	flex-wrap: wrap;
+	column-gap: 2em;
+	row-gap: 2px;
+}</pre></code></h2>
+<h5> Si align-content no es flex-end / flex-start el gap vertical se ve anulado por el 
+espaciamiento automático. el container debe verse cómo : align-content:start</h5>
+<div class="container-muy-alto flex-alcontent-start-13 flex-gap-17"  >
+	<div class="item-gordo item-sin-margen"> 1 </div>
+	<div class="item-gordo item-sin-margen"> 2 </div>
+	<div class="item-gordo item-sin-margen "> 3 </div>
+	<div class="item-gordo item-sin-margen"> 4 </div>
+	<div class="item-gordo item-sin-margen"> 5 </div>
+	<div class="item-base item-sinalt item-self-stretch item-sin-margen "> 6 </div>
+	<div class="item-gordo item-sin-margen"> 7 </div>
+	<div class="item-gordo item-sin-margen"> 8 </div>
+	<div class="item-base item-self-end item-sin-margen"> 9 </div>
+	<div class="item-gordo item-sin-margen "> 10 </div>	
+</div>
+
+</h1> Anchura de Items por flex: porcentaje</h1>
+<h2> align-self:stretch y align-self: flex-end </h2>
+<div class="container-muy-alto flex-wrap-02"  >
+	<div class="item-base item-pc-25 "> 25% </div>
+	<div class="item-base item-pc-25  "> 25%</div>
+	<div class="item-base item-pc-25  "> 25% </div>
+	<div class="item-base item-pc-50  "> 50%</div>
+	<div class="item-base item-pc-25  "> 25%</div>
+	<div class="item-base item-pc-25  "> 25% </div>
+	<div class="item-base item-pc-50  "> 50% </div>
+	<div class="item-base item-pc-50  "> 50% </div>
+	<div class="item-base item-pc-50 "> 50%</div>
+	<div class="item-base item-pc-25  "> 25% </div>	
+</div>
+
+
+</body>
+</html>
+

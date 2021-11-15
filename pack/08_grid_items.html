@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="08_grid_items.css"> 
+
+<script>
+</script>
+<style>
+</style>
+</head>
+<body>
+<h3> Página experimentacion con grid</h3>
+<p> 
+	Experimentos Que implican configurar items individualmente
+</p>
+ <script>	
+    let numCells = 8;
+    let numGrids = 20;
+    let codigoGrid ="<div id=\"especial\"> ";
+    
+    for (i=0;i< numGrids; i++) {
+       codigoGrid +="<div class=\"gc\">"
+		 for (j=0;j <numCells ;  j++)
+  		     codigoGrid += "<div class=\"item\"> "+ i + " - " +
+		   		String.fromCharCode(65+j) + "</div>";
+		 
+		 codigoGrid +="</div>";// tanca el div class=gc
+	 }    	
+	 codigoGrid += "</div>";
+	 document.body.innerHTML += codigoGrid;
+    
+    
+ </script>
+
+ 
+<footer> s'acabao la experimentacion</footer>
+</body>
+</html>

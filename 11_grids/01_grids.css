@@ -1,0 +1,90 @@
+body {
+  background-color: lightgreen;
+}
+
+.gc {
+  margin: 2em auto;
+  background-color: powderblue;
+
+  display: grid;
+}
+
+.gc > div {
+  border: 1px solid purple;
+}
+
+.gc:first-child {
+  background-color: aquamarine;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.gc:nth-child(2) {
+  background-color: tomato;
+  /* grid-template-columns: auto auto auto auto; */
+  /* Implicitamente hay una sola columna */
+  grid-template-rows: auto auto auto;
+  width: 600px;
+}
+
+.gc:nth-child(3) {
+  background-color: lightgoldenrodyellow;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
+}
+
+/* Establecer el ancho y alto en pixeles */
+.gc:nth-child(4) {
+  background-color: orange;
+  grid-template-columns: 100px auto auto;
+  width: 800px;
+}
+
+/* Establecer el ancho y alto en pixeles */
+.gc:nth-child(5) {
+  background-color: lightsalmon;
+  grid-template-columns: 100px 2fr 5fr;
+  grid-template-rows: 100px;
+  width: 800px;
+}
+
+/* Usando porcentajes y excediendonos */
+.gc:nth-child(6) {
+  background-color: peru;
+  grid-template-columns: 100px 10% 90%;
+  width: 800px;
+}
+
+/* Usando porcentajes quedandonos cortos y el fr lo arregla */
+.gc:nth-child(7) {
+  background-color: darkorchid;
+  grid-template-columns: 10% 1fr 50%;
+  width: 800px;
+}
+
+/* repeat */
+.gc:nth-child(8) {
+  background-color: darkturquoise;
+  grid-template-columns: 100px repeat(3, 1fr) repeat(2, 2fr);
+  width: 800px;
+}
+
+/* min-max frente a auto auto (el contenido manda más) */
+.gc:nth-child(9) {
+  background-color: lightseagreen;
+  grid-template-columns: minmax(200px, 500px) auto auto;
+}
+
+/* min-max frente a auto auto (el contenido manda más) */
+.gc:nth-child(10) {
+  background-color: darkkhaki;
+  grid-template-columns: minmax(200px, 500px) 1fr 1fr;
+}
+
+/* Solo si establecemos una altura para la tabla */
+.gc:nth-child(12) {
+  background-color: yellow;
+  height: 400px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 80px 50% 2fr 1fr;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="07_grid.css">
+
+  <script>
+    class MiGrid extends HTMLParagraphElement {
+      constructor() {
+        super();
+
+        this.attachShadow({ mode: 'open' });
+      }
+
+      connectedCallback() {
+        console.log("connected");
+        this.shadowRoot.innerHTML = `
+      <div>Hello world</div>
+    `;
+      }
+    }
+    /********** DOMContentLoaded ***********************/
+    document.addEventListener("DOMContentLoaded", function (event) {
+      customElements.define("mi-grid", MiGrid, { extends: 'div' });
+      console.log("hola");
+    });
+
+  </script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h3> Página experimentacion con grid</h3>
+  <p>
+    Experimentos SIN entrar a configurar items individuales,
+    grid-template-columns y grid-template-rows únicamente
+  </p>
+  <script>
+    let numCells = 8;
+    let numGrids = 11;
+    let codigoGrid = "<div id=\"especial\"> ";
+
+    for (i = 0; i < numGrids; i++) {
+      codigoGrid += "<descripcion> Tabla " + (i + 1) + "</descripcion>";
+      codigoGrid += "<div class=\"gc\">"
+      for (j = 0; j < numCells; j++)
+        if (i == 9 && j == 4)
+          codigoGrid += "<div> " + i + " - " +
+            String.fromCharCode(65 + j) + " eleutelio</div>";
+        else
+          codigoGrid += "<div> " + i + " - " +
+            String.fromCharCode(65 + j) + "</div>";
+
+      codigoGrid += "</div>";// tanca el div class=gc
+    }
+    codigoGrid += "</div>";
+    document.body.innerHTML += codigoGrid;
+  </script>
+
+  <mi-grid class="grid-content1">
+    <div class="item">1</div>
+    <div class="item">22222 222222 222 22222 </div>
+    <div class="item">3</div>
+    <div class="item">44 44444444 4 444444444 4 4444 444 444</div>
+    <div class="item">5</div>
+    <div class="item">7</div>
+    <div class="item">88888 88 88 888888888888888 888 </div>
+    <div class="item">9999 9 99 99 99 9999</div>
+    <div class="item">A</div>
+    <div class="item">BBBBBBB B BBB BBB B BB B BBBBBBBBBBBBB BBB BBB BB BBB</div>
+    <div class="item">CCCC C CC CC CC</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+    <div class="item">FFFF F F FFFFFF </div>
+    <div class="item">GGGGGGG </div>
+    <div class="item">HHHH H H HHHHH H H</div>
+    <div class="item">IIIII III </div>
+    <div class="item">J JJ </div>
+    <div class="item">K KKK K K KKK KK </div>
+    <div class="item">L LL LLL LL L</div>
+    <div class="item">M</div>
+    <div class="item">NNNNN N NNN NN NN </div>
+  </mi-grid>
+
+  <mi-grid class="grid-content2">
+    <div class="item">1</div>
+    <div class="item">22222 222222 222 22222 </div>
+    <div class="item">3</div>
+    <div class="item">44 44444444 4 444444444 4 4444 444 444</div>
+    <div class="item">5</div>
+    <div class="item">7</div>
+    <div class="item">88888 88 88 888888888888888 888 </div>
+    <div class="item">9999 9 99 99 99 9999</div>
+    <div class="item">A</div>
+    <div class="item">BBBBBBB B BBB BBB B BB B BBBBBBBBBBBBB BBB BBB BB BBB</div>
+    <div class="item">CCCC C CC CC CC</div>
+    <div class="item">D</div>
+    <div class="item">E</div>
+    <div class="item">FFFF F F FFFFFF </div>
+    <div class="item">GGGGGGG </div>
+    <div class="item">HHHH H H HHHHH H H</div>
+    <div class="item">IIIII III </div>
+    <div class="item">J JJ </div>
+    <div class="item">K KKK K K KKK KK </div>
+    <div class="item">L LL LLL LL L</div>
+    <div class="item">M</div>
+    <div class="item">NNNNN N NNN NN NN </div>
+  </mi-grid>
+
+  <footer> s'acabao la experimentacion</footer>
+</body>
+
+</html>
