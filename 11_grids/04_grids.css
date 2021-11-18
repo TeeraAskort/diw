@@ -1,0 +1,236 @@
+.gc {
+  display: grid;
+}
+
+.gc:first-of-type {
+  grid-template-columns: auto auto auto;
+  background-color: lightgreen;
+}
+
+/* Per ensenyar-se com modificar elements individuals sense javascript */
+
+.gc:nth-of-type(2) {
+  grid-template-columns: auto auto auto;
+  background-color: lightblue;
+}
+
+.gc:nth-of-type(2) .grid-item:nth-child(5) {
+  background-color: red;
+}
+
+/* Anem a reubicar un element digent-li on comença */
+
+.gc:nth-of-type(3) {
+  grid-template-columns: auto auto auto;
+  background-color: lightcoral;
+}
+
+.gc:nth-of-type(3) .grid-item:nth-child(4) {
+  background-color: lightpink;
+  grid-column-start: 3;
+}
+
+.gc:nth-of-type(3) .grid-item:nth-child(6) {
+  background-color: lightseagreen;
+  grid-column-start: 1;
+}
+
+/* Anem a reubicar un element digent-li on comença */
+
+.gc:nth-of-type(4) {
+  grid-template-columns: auto auto auto;
+  background-color: powderblue;
+}
+
+.gc:nth-of-type(4) .grid-item:nth-child(4) {
+  border: 2px solid black;
+  grid-column-start: 3;
+}
+
+.gc:nth-of-type(4) .grid-item:nth-child(6) {
+  border: 2px solid black;
+  grid-column-start: 1;
+}
+
+.gc:nth-of-type(4) .grid-item:nth-child(7) {
+  background-color: lightsalmon;
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+/* Anem a reubicar un element digent-li on comença posant-li més columnes de les definides */
+
+.gc:nth-of-type(5) {
+  grid-template-columns: auto auto auto;
+  background-color: darkkhaki;
+}
+
+.gc:nth-of-type(5) .grid-item:nth-child(4) {
+  border: 2px solid black;
+  grid-column-start: 5;
+}
+
+.gc:nth-of-type(5) .grid-item:nth-child(6) {
+  border: 2px solid black;
+  grid-column-start: 1;
+}
+
+.gc:nth-of-type(5) .grid-item:nth-child(7) {
+  background-color: lightsalmon;
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+/* Celdes ocupen varies files i columnes */
+
+.gc:nth-of-type(6) {
+  grid-template-columns: auto auto auto auto;
+  background-color: lightblue;
+}
+
+.gc:nth-of-type(6) .grid-item:nth-child(2) {
+  background-color: red;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gc:nth-of-type(6) .grid-item:nth-child(6) {
+  background-color: lime;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* Celdes ocupen varies files i columnes */
+
+.gc:nth-of-type(7) {
+  grid-template-columns: auto auto auto auto;
+  background-color: lightblue;
+}
+
+.gc:nth-of-type(7) .grid-item:nth-child(2) {
+  background-color: red;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gc:nth-of-type(7) .grid-item:nth-child(6) {
+  background-color: lime;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* Celdes ocupen varies files i columnes */
+
+.gc:nth-of-type(8) {
+  display: -moz-inline-grid;
+  grid-template-columns: auto auto auto auto;
+  /* grid-template-rows: auto auto auto auto auto auto; */
+  background-color: lightblue;
+  /* grid-auto-flow: unset; */
+}
+
+.gc:nth-of-type(8) .grid-item:nth-child(1) {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 3;
+}
+
+.gc:nth-of-type(8) .grid-item:nth-child(3) {
+  background-color: yellow;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.gc:nth-of-type(8) .grid-item:nth-child(4) {
+  background-color: brown;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 3;
+}
+
+/* Celdes ocupen varies files i columnes */
+
+.gc:nth-of-type(9) {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  background-color: peachpuff;
+  justify-content: start;
+}
+
+.gc:nth-of-type(9) .grid-item {
+  background-color: aquamarine;
+}
+
+/* justify-content align-content */
+
+.gc:nth-of-type(10) {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  background-color: goldenrod;
+  align-content: space-around;
+  justify-content: center;
+  height: 300px;
+}
+
+.gc:nth-of-type(10) .grid-item {
+  background-color: palevioletred;
+}
+
+/* justify-items align-content */
+
+.gc:nth-of-type(11) {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  background-color: mediumvioletred;
+  align-content: center;
+  justify-items: end;
+  height: 300px;
+}
+
+.gc:nth-of-type(11) .grid-item {
+  background-color: purple;
+}
+
+/* justify-items align-content align-items justify-content */
+
+.gc:nth-of-type(12) {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  background-color: mediumorchid;
+  align-content: start;
+  justify-items: end;
+  justify-content: start;
+  align-items: start;
+  align-items: start;
+  height: 300px;
+}
+
+.gc:nth-of-type(12) .grid-item {
+  background-color: gainsboro;
+}
+
+.gc:nth-of-type(12) .grid-item:nth-child(2) {
+  width: 100px;
+}
+
+.gc:nth-of-type(12) .grid-item:nth-child(5) {
+  height: 75px;
+}
+
+/* grid-item */
+
+.grid-item {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 3px;
+  padding: 0 5px;
+}

@@ -1,0 +1,34 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr 1fr;
+  grid-template-rows: 50px 75px 50px;
+  grid-template-areas:
+    "lateral header header header "
+    "lateral cuerpo cuerpo cuerpo"
+    "pie pie - -";
+}
+
+.lateral {
+  grid-area: lateral;
+  background-color: peru;
+}
+
+.cuerpo {
+  grid-area: cuerpo;
+  background-color: black;
+  color: white;
+}
+
+.header {
+  grid-area: header;
+  background-color: grey;
+}
+
+.pie {
+  grid-area: pie;
+  background-color: burlywood;
+}
+
+body {
+  background-color: darkgray;
+}
