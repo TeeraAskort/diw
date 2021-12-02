@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap ejemplo</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css">
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        function setEverythingToDisplay() {
+            let tabla = document.querySelector('#myTable');
+            tabla.querySelectorAll('tr').forEach((tr) => {
+                tr.style.display = "";
+            })
+        }
+
+        function buscarYOcultarTexto(searchText) {
+            let tabla = document.querySelector('#myTable');
+            // tabla.querySelectorAll('tr').forEach((tr) => {
+            //     let encontrado = false;
+            //     tr.querySelectorAll('td').forEach((td) => {
+            //         if (td.innerText.toLowerCase().includes(searchText)) {
+            //             encontrado = true;
+            //         }
+            //     })
+            //     if (!encontrado) {
+            //         tr.style.display = "none";
+            //     } else {
+            //         tr.style.display = "";
+            //     }
+            // })
+
+            setEverythingToDisplay();
+
+            [...tabla.querySelectorAll('tr')].filter((tr) => {
+                return ![...tr.querySelectorAll('td')].some((td) =>
+                    td.innerText.toLowerCase().includes(searchText)
+                );
+            }).forEach((tr) => {
+                tr.style.display = "none";
+            })
+
+        }
+
+        function inicializar() {
+            let input = document.querySelector('#searchInput');
+            input.addEventListener('focusin', () => {
+                document.addEventListener('keyup', () => {
+                    let searchText = input.value;
+                    console.log(searchText);
+                    if (searchText) {
+                        buscarYOcultarTexto(searchText.toLowerCase());
+                    } else {
+                        setEverythingToDisplay();
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializar);
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <input class="form-control form-control-lg" type="text" id="searchInput" placeholder="Search"
+            aria-label="Search">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Correos</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>doe_john@mail.com</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Doe</td>
+                    <td>doe_mary@mail.com</td>
+                </tr>
+                <tr>
+                    <td>Pepe</td>
+                    <td>Doe</td>
+                    <td>doe_pepe@mail.com</td>
+                </tr>
+                <tr>
+                    <td>Jose</td>
+                    <td>Doe</td>
+                    <td>doe_jose@mail.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
