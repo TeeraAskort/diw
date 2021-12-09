@@ -9,12 +9,87 @@
 
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css">
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let frases = `Preocupado por «la investigación y desarrollo de armas químicas, biológicas, radiológicas y materiales capaces de emplearse en operaciones clandestinas para el control del comportamiento humano», el programa consistió en 149 subproyectos que la agencia contrató a varias universidades, fundaciones dedicadas a la investigación e instituciones similares. Participaron al menos 80 instituciones y 185 investigadores privados. Debido a que la CIA financió MK Ultra indirectamente, muchas de las personas que participaban no sabían que se trataba de la agencia.El proyecto MK Ultra atrajo la atención de la opinión pública en 1975, cuando el Comité Church del Congreso de Estados Unidos, que investigaba los abusos cometidos por los servicios de inteligencia en las décadas precedentes, y la Comisión Gerald Ford, investigaron las actividades de la CIA dentro de Estados Unidos. Sus esfuerzos se vieron obstaculizados por el director de la CIA, Richard Helms, que ordenó destruir todos los documentos sobre MK Ultra. Las investigaciones del Comité Church y la Comisión Rockefeller se tuvieron que basar en los testimonios jurados de participantes directos y en el pequeño número de documentos que sobrevivieron a los intentos de destrucción.En 1977, una solicitud a la Ley por la Libertad de la Información permitió descubrir un fondo con 20000 documentos relacionados con MK Ultra, que condujo a nuevas audiencias en el Senado ese mismo año. En julio de 2001, algunos restos residuales de información sobre MK Ultra que aún eran secretos fueron desclasificados.El programa MK Ultra se inició por orden de Allen Dulles, el director de la CIA, en 1953. El primer jefe del programa fue Sidney Gottlieb. El objetivo principal era producir una droga que obligara al sujeto a decir la verdad. Pero había aproximadamente 150 proyectos de investigación en el programa, y aún no se conoce el propósito de todos ellos.La Agencia gastó decenas de millones de dólares de entonces en estudios para controlar o influenciar la mente humana, y así mejorar sus capacidades de extraer información de los individuos resistentes a los interrogatorios.Algunos historiadores creen que crear un sujeto tipo "candidato manchú" a través de técnicas de "control mental" era una de las metas de MK-ULTRA y otros proyectos de la CIA relacionados. Alfred McCoy afirmó que la CIA trataba de enfocar la atención de los grandes medios de comunicación en estos "programas ridículos", para distraerlos de las metas primarias de ellos, las cuales eran desarrollar métodos eficaces de tortura e interrogatorio. Estos autores citan como un ejemplo, el hecho de que los manuales de interrogación KUBARK de la CIA se refieren a "estudios en la Universidad McGill", y la mayor parte de las técnicas a las que se refiere KUBARK son exactamente las mismas que Ewen Cameron usaba en sus sujetos de prueba (privación sensorial, drogas, aislamiento, etc).Un documento de 1955 de MK-ULTRA da indicios del estado y de la magnitud del esfuerzo; este documento da cuenta de un estudio con drogas que alteran la consciencia como sigue.No se tiene muy claro cuáles fueron las drogas utilizadas en este proceso. Se tiene más en cuenta que fueron las drogas las que causaban mayor daño cerebral, obligando al sujeto de prueba a ver cosas y a hacer lo que la "CIA" quisiera. La droga que sí se podría afirmar que se utilizaba fue el ya conocido "LSD", que fue una droga psicodélica usada en "lavados de cerebro".`.split('.');
+
+        let index = 0;
+
+        function inicializar() {
+            let carrousel = document.querySelector('#carrousel');
+
+            let buttons = document.querySelector('.carousel-indicators');
+            let images = document.querySelector('.carousel-inner');
+
+            carrousel.addEventListener('dragover', (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+                event.dataTransfer.dropEffect = 'copy';
+            });
+
+            carrousel.addEventListener('drop', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                console.log(event.dataTransfer.types);
+
+                if (event.dataTransfer.types.some((type) => type.includes('Files'))) {
+                    let files = event.dataTransfer.files;
+
+                    // console.log(event.dataTransfer.files[0].name);
+
+                    if (files[0].type.match(/image.*/)) {
+                        let reader = new FileReader();
+
+                        reader.onload = (ev) => {
+                            let btnNumber = parseInt(buttons.children[buttons.children.length - 1].getAttribute('data-bs-slide-to')) + 1;
+                            buttons.innerHTML += `<button type="button" data-bs-target="#carrousel" data-bs-slide-to="${btnNumber}"
+                                aria - label="Slide ${btnNumber + 1}"></button >`
+
+                            images.innerHTML += `<div class="carousel-item">
+                                    <img src="${ev.target.result}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>MKUltra</h5>
+                                        <p>${frases[index++]}</p>
+                                    </div></div>`;
+                        }
+
+                        reader.readAsDataURL(files[0]);
+                    }
+                } else {
+                    let link = event.dataTransfer.getData('text/html')
+
+                    var rex = /src="?([^"\s]+)"?\s*/;
+                    let url = rex.exec(link);
+
+                    console.log(link);
+                    // console.log(link.getAsString());
+
+                    console.log(url);
+
+
+                    let btnNumber = parseInt(buttons.children[buttons.children.length - 1].getAttribute('data-bs-slide-to')) + 1;
+                    buttons.innerHTML += `<button type="button" data-bs-target="#carrousel" data-bs-slide-to="${btnNumber}"
+                                aria - label="Slide ${btnNumber + 1}"></button >`
+
+                    images.innerHTML += `<div class="carousel-item">
+                                    <img src="${url[1]}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>MKUltra</h5>
+                                        <p>${frases[index++]}</p>
+                                    </div></div>`;
+                }
+            })
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializar);
+    </script>
 </head>
 
 <body>
 
     <div class="container">
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carrousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -104,13 +179,11 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carrousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
