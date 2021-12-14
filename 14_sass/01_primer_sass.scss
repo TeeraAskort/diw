@@ -1,0 +1,94 @@
+@use "sass:list";
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #aaa;
+$borde-gros: 5px;
+$borde-mitja: 3px;
+$borde-finet: 1px;
+
+@mixin bordes($grosor: "finet") {
+  @if $grosor == "gros" {
+    border: $borde-gros solid red;
+  } @else if $grosor == "mitja" {
+    border: $borde-mitja solid red;
+  } @else {
+    border: $borde-finet solid red;
+  }
+  border-radius: 20px;
+}
+
+body {
+  font: 100% $font-stack;
+  background-color: $primary-color;
+}
+
+.cabecera {
+  display: flex;
+  flex-direction: row-reverse;
+
+  &__logo {
+    height: 6em;
+    @include bordes("mitja");
+  }
+}
+
+.cabecera__menu {
+  display: flex;
+  flex: 100%;
+  align-items: flex-end;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+
+  div {
+    background-color: chocolate;
+    padding: 20px;
+  }
+
+  &item {
+    @include bordes("gros");
+  }
+}
+
+.principal {
+  @include bordes("finet");
+  background-color: aliceblue;
+  padding: 10px;
+  display: flex;
+
+  &__lateral {
+    flex: 20%;
+    background-color: orange;
+  }
+
+  &__album {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.recuadro {
+  background-color: blanchedalmond;
+  max-width: 20rem;
+  padding: 10px;
+  align-self: flex-end;
+  margin: 10px;
+}
+
+@for $i from 1 through 4 {
+  .recuadro-#{$i} {
+    @extend .recuadro;
+    font-size: #{1 * 5 - $i}em;
+  }
+}
+
+$tamanyo-base: 1;
+
+$tamanyos: mini, medio, normal, grande;
+
+@each $tamanyo in $tamanyos {
+  .pie__#{$tamanyo} {
+    font-size: #{$tamanyo-base}rem;
+  }
+  $tamanyo-base: $tamanyo-base + 1;
+}

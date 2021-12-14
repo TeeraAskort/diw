@@ -1,0 +1,89 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #aaa;
+}
+
+.cabecera {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.cabecera__logo {
+  height: 6em;
+  border: 3px solid red;
+  border-radius: 20px;
+}
+
+.cabecera__menu {
+  display: flex;
+  flex: 100%;
+  align-items: flex-end;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+.cabecera__menu div {
+  background-color: chocolate;
+  padding: 20px;
+}
+.cabecera__menuitem {
+  border: 5px solid red;
+  border-radius: 20px;
+}
+
+.principal {
+  border: 1px solid red;
+  border-radius: 20px;
+  background-color: aliceblue;
+  padding: 10px;
+  display: flex;
+}
+.principal__lateral {
+  flex: 20%;
+  background-color: orange;
+}
+.principal__album {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recuadro, .recuadro-4, .recuadro-3, .recuadro-2, .recuadro-1 {
+  background-color: blanchedalmond;
+  max-width: 20rem;
+  padding: 10px;
+  align-self: flex-end;
+  margin: 10px;
+}
+
+.recuadro-1 {
+  font-size: 4em;
+}
+
+.recuadro-2 {
+  font-size: 3em;
+}
+
+.recuadro-3 {
+  font-size: 2em;
+}
+
+.recuadro-4 {
+  font-size: 1em;
+}
+
+.pie__mini {
+  font-size: 1rem;
+}
+
+.pie__medio {
+  font-size: 2rem;
+}
+
+.pie__normal {
+  font-size: 3rem;
+}
+
+.pie__grande {
+  font-size: 4rem;
+}
+
+/*# sourceMappingURL=01_primer_sass.css.map */
