@@ -1,0 +1,48 @@
+.eldiv {
+  width: 150px;
+  height: 150px;
+  background-color: rebeccapurple;
+  transition-duration: 2s;
+}
+
+.eldiv:hover {
+  background-color: aqua;
+  animation: rodacolors 5s infinite;
+}
+
+.eldiv2 {
+  margin-top: 2rem;
+  width: 150px;
+  height: 150px;
+  background-color: olivedrab;
+  transition-duration: 2s;
+}
+
+.eldiv2:hover {
+  background-color: aqua;
+  animation: rodacolors 10s infinite;
+}
+
+@keyframes rodacolors {
+  0% {
+    background-color: rebeccapurple;
+  }
+  15% {
+    background-color: blue;
+  }
+  25% {
+    background-color: brown;
+  }
+  50% {
+    background-color: chartreuse;
+  }
+  75% {
+    background-color: darkgreen;
+  }
+  90% {
+    background-color: black;
+  }
+  100% {
+    background-color: rebeccapurple;
+  }
+}

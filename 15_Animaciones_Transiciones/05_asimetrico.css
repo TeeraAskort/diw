@@ -1,0 +1,30 @@
+.boxAnimadaAsimetrica {
+  background-color: red;
+  color: white;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  font-size: 4rem;
+}
+
+.boxAnimadaAsimetrica:hover {
+  width: 800px;
+  background-color: greenyellow;
+  font-size: 5rem;
+  color: black;
+}
+
+.boxAnimadaAsimetrica:hover {
+  transition-delay: 0s, 0s, 3s, 0s;
+  transition-duration: 0.5s, 2s, 5s, 5s;
+}
+
+.boxAnimadaAsimetrica {
+  transition-property: background-color, font-size, width, color;
+  transition-duration: 0.1s, 0.4s, 0.5s, 0.5s;
+  transition-delay: 0s, 0s, 0s, 0s;
+}

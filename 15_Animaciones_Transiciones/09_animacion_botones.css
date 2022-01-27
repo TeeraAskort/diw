@@ -1,0 +1,155 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.container {
+  margin: 4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.btn {
+  background: none;
+  border: 3px solid white;
+  width: 100px;
+  padding: 20px 0;
+  color: crimson;
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 0;
+}
+
+.btn-rodent::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  background-color: red;
+  z-index: -1;
+  transition-duration: 1s;
+}
+
+.btn-rodent:hover {
+  color: white;
+  transition-duration: 1s;
+}
+
+.btn-rodent {
+  transition-duration: 1s;
+}
+
+.btn-rodent:hover::before {
+  transition-duration: 1s;
+  transform: translateX(100%);
+}
+
+.btn-shiny::before {
+  content: "";
+  width: 10px;
+  height: 100px;
+  left: -50%;
+  position: absolute;
+  rotate: -30deg;
+  background-color: antiquewhite;
+  transition-duration: 1s;
+  z-index: -1;
+}
+
+.btn-shiny {
+  transition-duration: 1s;
+}
+
+.btn-shiny:hover::before {
+  transition-duration: 1.5s;
+  transform: translate(200px, 100px);
+}
+
+.btn-shiny:hover {
+  transition-duration: 1s;
+  background-color: blue;
+}
+
+.btn-tooth::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: crimson;
+  z-index: -1;
+  transform: rotateX(90deg);
+  transition-duration: 2s;
+}
+
+.btn-tooth:hover::before {
+  transform: rotateX(0deg);
+  transition-duration: 2s;
+}
+
+.btn-tooth::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: crimson;
+  z-index: -1;
+  transform: rotateY(90deg);
+  transition-duration: 2s;
+}
+
+.btn-tooth:hover {
+  color: white;
+  transition-duration: 1s;
+}
+
+.btn-tooth {
+  transition-duration: 3s;
+}
+
+.btn-tooth:hover::after {
+  transform: rotateY(0deg);
+  transition-duration: 2s;
+}
+
+.btn-drink {
+}
+
+.btn-drink::before {
+  content: attr(mi-contenido);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: large;
+  opacity: 0%;
+}
+
+.btn-drink:hover::before {
+  transition-duration: 1s;
+  opacity: 100%;
+}
+
+.btn-drink:hover {
+  opacity: 0%;
+  transition-duration: 1s;
+}

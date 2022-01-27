@@ -1,0 +1,20 @@
+.boxAnimadaAsimetrica {
+  background-color: red;
+  color: white;
+  width: 600px;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  font-size: 4rem;
+}
+
+.boxAnimadaAsimetrica:hover {
+  background-color: greenyellow;
+  color: blue;
+  height: 300px;
+  transform: translate(200px, 200px) skew(10deg, 10deg) rotate(10deg);
+  transition: 3s;
+}

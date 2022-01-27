@@ -1,0 +1,44 @@
+:root {
+  --destinoX: 100px;
+  --destinoY: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: bisque;
+}
+
+.mover {
+  width: 50px;
+  height: 50px;
+  background-color: blueviolet;
+  animation: moverAlRaton 5s infinite;
+  /* Perseguir el ratolí */
+  /* transform: translate(
+    calc(var(--destinoX) - 50%),
+    calc(var(--destinoY) - 50%)
+  );
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}
+
+@keyframes moverAlRaton {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  50% {
+    transform: translate(
+      calc(var(--destinoX) - 50%),
+      calc(var(--destinoY) - 50%)
+    );
+  }
+  100% {
+    transform: translate(0vw, 0vh);
+  }
+}
