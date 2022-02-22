@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        class WordCount extends HTMLParagraphElement {
+            that = this;
+            wrapper = "";
+
+            countWords() {
+                const parent = this.parentNode;
+
+                let words = 0;
+
+                parent.childNodes.forEach((element) => {
+                    let arrW = element.textContent.trim().split(' ');
+                    words += arrW.length;
+                });
+
+                this.wrapper.textContent = "Words: " + words;
+            }
+
+            constructor() {
+                super();
+
+                const shadow = this.attachShadow({ mode: "open" });
+
+                this.wrapper = document.createElement("span");
+                this.wrapper.setAttribute("class", "wrapper");
+
+                this.countWords();
+
+                this.shadowRoot.append(this.wrapper);
+
+                setInterval(function (element) {
+                    return () => element.countWords();
+                }(this), 1000)
+            }
+        }
+
+
+        function inicializar() {
+            customElements.define('word-count', WordCount, {
+                extends: 'p'
+            })
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializar);
+    </script>
+
+
+</head>
+
+<body>
+    <h1>Word count rating widget</h1>
+    <h2>Sample heading</h2>
+    <article contenteditable="">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas eligendi reprehenderit, est sequi hic
+            pariatur impedit ducimus odio quas quam deleniti distinctio consequatur! Quod fugiat, dolorem quam non
+            voluptatem placeat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laborum molestiae voluptate amet magni hic
+            a obcaecati non ad quisquam! Ex nesciunt totam optio unde, atque sapiente eveniet recusandae aspernatur.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur fugit molestiae, et ipsa iure aperiam
+            sapiente sint repudiandae voluptatibus blanditiis aliquid fugiat, explicabo excepturi quia ut! Sequi
+            cupiditate adipisci at.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos harum iusto quos reiciendis, possimus quisquam
+            amet porro nesciunt ullam quasi, nostrum inventore non quia numquam deleniti! Doloremque ad distinctio
+            molestiae!
+        </p>
+        <p is="word-count"></p>
+    </article>
+</body>
+
+</html>

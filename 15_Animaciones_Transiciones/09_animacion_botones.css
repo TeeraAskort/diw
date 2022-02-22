@@ -27,7 +27,7 @@ h1 {
   background: none;
   border: 3px solid white;
   width: 100px;
-  padding: 20px 0;
+  height: 70px;
   color: crimson;
   border-radius: 10px;
   margin-top: 20px;
@@ -68,7 +68,8 @@ h1 {
 .btn-shiny::before {
   content: "";
   width: 10px;
-  height: 100px;
+  height: 150px;
+  top: -15px;
   left: -50%;
   position: absolute;
   rotate: -30deg;
@@ -133,6 +134,8 @@ h1 {
 }
 
 .btn-drink {
+  position: relative;
+  transition-duration: 1s;
 }
 
 .btn-drink::before {
@@ -147,9 +150,12 @@ h1 {
 .btn-drink:hover::before {
   transition-duration: 1s;
   opacity: 100%;
+  z-index: 1;
 }
 
 .btn-drink:hover {
-  opacity: 0%;
+  z-index: 0;
+  font-size: 0px;
+  padding: 30px 0;
   transition-duration: 1s;
 }

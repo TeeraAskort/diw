@@ -1,0 +1,63 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#boton {
+  margin-top: 100px;
+  width: 700px;
+  height: 400px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: rgb(243, 170, 243);
+  font-size: 100px;
+  font-weight: bolder;
+  box-shadow: 0 0 40px rgb(243, 170, 243), 0 0 40px rgb(243, 170, 243) inset;
+  border: 20px solid rgb(243, 170, 243);
+  text-shadow: 0 0 20px rgb(243, 170, 243);
+  position: relative;
+  font-family: "Comic Neue", cursive;
+  z-index: 1;
+  perspective: 200px;
+}
+
+#boton::before {
+  content: "";
+  width: 125%;
+  height: 10%;
+  top: 175%;
+  left: -10%;
+  position: absolute;
+  background-color: rgb(243, 170, 243);
+  transform: rotateX(120deg);
+  filter: blur(70px);
+  opacity: 40%;
+}
+#boton:hover::before {
+  background-color: violet;
+  opacity: 60%;
+}
+
+#boton::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: violet;
+  opacity: 0%;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#boton:hover {
+  color: black;
+  border-color: violet;
+  box-shadow: 0 0 40px violet, 0 0 40px violet inset;
+}
+
+#boton:hover::after {
+  opacity: 100%;
+}

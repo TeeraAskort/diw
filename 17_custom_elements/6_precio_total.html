@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates</title>
+
+    <script>
+
+        class PrecioTotal extends HTMLParagraphElement {
+            constructor() {
+                super();
+
+                const shadow = this.attachShadow({ mode: "open" });
+
+                let wrapper = document.createElement("span");
+                wrapper.setAttribute("class", "wrapper");
+
+                let tabla = this.parentNode;
+                let totales = tabla.querySelectorAll('.total');
+                let suma = 0;
+                totales.forEach((total) => {
+                    let aux = total.textContent.replace('€', '')
+                    suma += parseInt(aux);
+                })
+
+                let tbody = tabla.querySelector('tbody');
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                tr.appendChild(td1);
+                td2.textContent = "Total: ";
+                tr.appendChild(td2);
+                let tdT = document.createElement('td');
+                tdT.textContent = suma + "€";
+                tr.append(tdT);
+                tbody.append(tr);
+
+                wrapper.textContent = "Total: " + suma + "€";
+
+                this.shadowRoot.append(wrapper);
+            }
+        }
+
+        function inicializar() {
+            let elemento = document.querySelector("#filaproducto");
+            let fila = elemento.content.querySelectorAll('td');
+            fila[0].textContent = "0AS-32";
+            fila[1].textContent = "Spray anti mosquitos";
+
+            let tabla = document.querySelector('#tabla');
+            let bodyTabla = tabla.querySelector('tbody');
+
+            for (let i = 0; i < 10; i++) {
+                let precio = Math.round(Math.random() * 100);
+                let cantidad = Math.round(Math.random() * 1000);
+                fila[0].textContent = precio + "€";
+                fila[1].textContent = cantidad;
+                fila[2].textContent = (precio * cantidad) + "€";
+                let clon = document.importNode(elemento.content, true);
+                bodyTabla.appendChild(clon);
+            }
+
+            customElements.define('total-factura', PrecioTotal, { extends: 'p' })
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializar);
+    </script>
+</head>
+
+<body>
+    <table id="tabla" border="1">
+        <thead>
+            <tr>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <p is="total-factura"></p>
+    </table>
+
+    <template id="filaproducto">
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="total"></td>
+        </tr>
+    </template>
+</body>
+
+</html>

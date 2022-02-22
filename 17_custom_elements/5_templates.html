@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates</title>
+
+    <script>
+
+        function inicializar() {
+            let elemento = document.querySelector("#filaproducto");
+            let fila = elemento.content.querySelectorAll('td');
+            fila[0].textContent = "0AS-32";
+            fila[1].textContent = "Spray anti mosquitos";
+
+            let clon = document.importNode(elemento.content, true);
+
+            let tabla = document.querySelector('#tabla');
+            let bodyTabla = tabla.querySelector('tbody');
+
+            bodyTabla.appendChild(clon);
+
+            fila[0].textContent = "111-32";
+            fila[1].textContent = "Tabla madera 5x15";
+
+            clon = document.importNode(elemento.content, true);
+
+            bodyTabla.appendChild(clon);
+
+            fila[0].textContent = "222-B3";
+            fila[1].textContent = "Tornillo X5";
+
+            clon = document.importNode(elemento.content, true);
+
+            bodyTabla.appendChild(clon);
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializar);
+    </script>
+</head>
+
+<body>
+    <table id="tabla" border="1">
+        <thead>
+            <tr>
+                <th>Código producto</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <template id="filaproducto">
+        <tr>
+            <td class="record"></td>
+            <td></td>
+        </tr>
+    </template>
+</body>
+
+</html>
